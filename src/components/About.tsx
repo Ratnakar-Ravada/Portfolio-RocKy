@@ -11,7 +11,7 @@ export const About = () => {
           <div className="lg:col-span-2 reveal">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg leading-relaxed mb-6">
-                I'm a confident, result-oriented, motivated, and highly skilled Full Stack Engineer with 2 years of professional experience, specialized in building modern web applications using modern technologies.
+                I'm a confident, result-oriented, motivated, and highly skilled Full Stack Developer with 2 years of professional experience, specialized in building modern web applications using modern technologies.
               </p>
               
               <p className="text-lg leading-relaxed mb-6">
@@ -28,17 +28,17 @@ export const About = () => {
             <div className="mt-8 flex flex-wrap gap-4">
               <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-background/80 shadow-sm">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span>Hyderabad, India</span>
+                <span>Hyderabad, Telangana, India</span>
               </div>
               
               <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-background/80 shadow-sm">
                 <Briefcase className="w-5 h-5 text-primary" />
-                <span>Full Stack Engineer</span>
+                <span>Full Stack Developer</span>
               </div>
               
               <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-background/80 shadow-sm">
                 <GraduationCap className="w-5 h-5 text-primary" />
-                <span>Bachelors Degree in Information Technology</span>
+                <span>Bachelor's Degree in Information Technology</span>
               </div>
               
               <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-background/80 shadow-sm">

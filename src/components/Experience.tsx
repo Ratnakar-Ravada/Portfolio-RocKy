@@ -37,7 +37,7 @@ const experiences = [
     packages: 'Chart.js, Ant-Design, React-redux, React-router-dom, React-i18n, React-hooks, Boto3, Sqlalchemy, Scikit, Werkzeug, Flask-Pydantic, Genism, Playwright, PyPDF, Pandas'
   },
   {
-    title: 'Software Engineer Intern',
+    title: 'Software Developer Intern',
     company: 'Circle Security',
     location: 'Hyderabad, Telangana',
     period: 'Jan 2023 - Jul 2023',
@@ -70,9 +70,6 @@ export const Experience = () => {
                 <div className="rounded-xl bg-background p-6">
                   {/* Header with timeline indicator */}
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 relative">
-                    {/* Timeline dot with connecting line */}
-                    <div className="absolute left-0 top-0 bottom-0 w-[3px] h-full bg-primary/20 hidden md:block" 
-                         style={{ display: index === experiences.length - 1 ? 'none' : 'block' }}></div>
                     <div className="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center -translate-x-1/2 hidden md:flex">
                       <div className="w-2 h-2 rounded-full bg-primary"></div>
                     </div>

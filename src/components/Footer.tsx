@@ -17,7 +17,7 @@ export const Footer = () => {
               <span className="text-primary">Ravada Ratnakar</span>
             </h3>
             <p className="text-sm text-muted-foreground mt-1">
-              Full Stack Engineer
+              Full Stack Developer
             </p>
           </div>
           

@@ -1,12 +1,9 @@
-
-import { ExternalLink, Github } from 'lucide-react';
-
 const projects = [
   {
-    title: 'Competitor Analysis Dashboard',
+    title: 'Competitor Analysis',
     description: 'Interactive dashboard for brands to compare customer sentiment and reviews across multiple platforms and categories.',
     image: '/placeholder.svg',
-    tags: ['React.js', 'Chart.js', 'Flask', 'AWS'],
+    tags: ['React.js', 'Chart.js', 'Flask', 'Amazon DynamoDB', 'REST API'],
     features: [
       'Real-time visualization of competitor data',
       'Interactive filtering by date, sentiment, and platform',
@@ -18,7 +15,7 @@ const projects = [
     title: 'Automated Report Generator',
     description: 'AI-driven tool that generates custom reports from customer data with user-defined filters and sends them via email.',
     image: '/placeholder.svg',
-    tags: ['Python', 'React.js', 'AWS S3', 'MailChimp API'],
+    tags: ['Python', 'React.js', 'Chart.js', 'Playwright', 'CRON', 'MailChimp'],
     features: [
       'Scheduled reports (daily, weekly, monthly)',
       'Ad-hoc report generation with custom filters',
@@ -30,7 +27,7 @@ const projects = [
     title: 'Secure File Management System',
     description: 'Web application for secure file storage and sharing with credential-free authentication and encryption.',
     image: '/placeholder.svg',
-    tags: ['React.js', 'Node.js', 'OAuth 2.0', 'Cryptography'],
+    tags: ['Vanilla JS', 'HTML', 'CSS', 'OAuth 2.0', 'Credential-free Authentication'],
     features: [
       'QR code-based authentication',
       'End-to-end file encryption',
@@ -39,15 +36,14 @@ const projects = [
     ]
   },
   {
-    title: 'AI-powered Feedback Analysis Tool',
-    description: 'System for collecting, categorizing, and analyzing customer feedback to improve prediction model accuracy.',
+    title: 'Pivot Analysis',
+    description: 'Analyzing the feedback from customers and displaying the analysis via interactive charts',
     image: '/placeholder.svg',
-    tags: ['React.js', 'Python', 'Machine Learning', 'NLP'],
+    tags: ['React.js', 'Flask', 'REST API', 'Amazon DynamoDB', 'Chart.js'],
     features: [
-      'Real-time category and decision-based feedback',
-      'Sentiment analysis visualization',
-      'Auto-categorization of user feedback',
-      'Performance metrics dashboard'
+      'Interactive charts (Doughnut and Line)',
+      'Filtering of the reviews based on a key column (Pivot) through a Multi-level Dropdown',
+      'Union and Intersection among multiple pivot filters',
     ]
   }
 ];
@@ -103,17 +99,6 @@ export const Projects = () => {
                     </li>
                   ))}
                 </ul>
-                
-                <div className="flex gap-4 mt-4">
-                  <button className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors">
-                    <Github className="w-4 h-4 mr-2" />
-                    <span>Source Code</span>
-                  </button>
-                  <button className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    <span>Live Demo</span>
-                  </button>
-                </div>
               </div>
             </div>
           ))}

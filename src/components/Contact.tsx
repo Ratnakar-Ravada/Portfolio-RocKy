@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 export const Contact = () => {
   const [formState, setFormState] = useState({
@@ -13,34 +14,48 @@ export const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   
+  const EMAILJS_USER_ID = import.meta.env.VITE_EMAILJS_USER_ID
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value
     });
   };
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitMessage('Thank you for your message! I will get back to you soon.');
-      setFormState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+  
+    const templateParams = {
+      name: formState.name,
+      email: formState.email,
+      subject: formState.subject,
+      message: formState.message
+    };
+  
+    emailjs
+      .send(
+        EMAILJS_SERVICE_ID,    // Replace with your EmailJS Service ID
+        EMAILJS_TEMPLATE_ID,   // Replace with your EmailJS Template ID
+        templateParams,
+        EMAILJS_USER_ID  // Replace with your EmailJS User ID (Publick key in Account info)
+      )
+      .then(() => {
+        setIsSubmitting(false);
+        setSubmitMessage('Thank you for your message! I will get back to you soon.');
+        setFormState({ name: '', email: '', subject: '', message: '' });
+  
+        setTimeout(() => setSubmitMessage(''), 5000);
+      })
+      .catch((error) => {
+        console.error('Email sending error:', error);
+        setSubmitMessage('Failed to send message. Please try again later.');
+        setIsSubmitting(false);
       });
-      
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setSubmitMessage('');
-      }, 5000);
-    }, 1500);
   };
+  
   
   return (
     <section id="contact" className="py-20 bg-secondary/30">
@@ -90,7 +105,7 @@ export const Contact = () => {
                   <div>
                     <h4 className="font-semibold mb-1">Location</h4>
                     <p className="text-muted-foreground">
-                      Andhra Pradesh, India
+                      Hyderabad, Telangana, India
                     </p>
                   </div>
                 </div>

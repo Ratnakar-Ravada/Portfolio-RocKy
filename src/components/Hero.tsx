@@ -12,17 +12,14 @@ export const Hero = () => {
       
       <div className="container max-w-6xl px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="order-2 lg:order-1 animate-fade-in-left">
-          <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary mb-4 animate-pulse-slow">
-            <span className="text-sm font-medium">Full Stack Engineer</span>
-          </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-            Hi, I'm <span className="text-primary">Ravada Ratnakar</span> 
+            Hi, I'm <span className="text-primary">Ratnakar</span> 
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
             Building elegant and high-performance web applications with passion and precision.
-            Specialized in full-stack development with modern JavaScript and Python frameworks.
+            Specialized in full-stack development with modern JavaScript, Python frameworks and AWS Ecosystem.
           </p>
           
           <div className="flex flex-wrap gap-4">
@@ -33,10 +30,16 @@ export const Hero = () => {
               Get in Touch
             </a>
             <a 
-              href="#projects"
+              href="#experience"
               className="px-6 py-3 rounded-lg bg-secondary text-foreground font-medium transition-all hover:bg-secondary/70 hover:shadow-md hover:scale-[1.02]"
             >
-              View Projects
+              View Experience
+            </a>
+            <a 
+              href="#experience"
+              className="px-6 py-3 rounded-lg bg-secondary text-foreground font-medium transition-all hover:bg-secondary/70 hover:shadow-md hover:scale-[1.02]"
+            >
+              View Resume
             </a>
           </div>
           
@@ -73,13 +76,11 @@ export const Hero = () => {
           <div className="relative">
             {/* Replace with your actual image */}
             <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-primary shadow-xl animate-float">
-              <div className="w-full h-full bg-gradient-to-tr from-primary/80 to-primary/20 rounded-full flex items-center justify-center text-white text-4xl font-bold">
-                RR
-              </div>
+                <img src='/Photo DP.jpg' alt='img'/>
             </div>
             
             <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-full bg-background border shadow-lg animate-scale-in">
-              <span className="text-sm font-medium">2+ Years Experience</span>
+              <span className="text-sm font-medium">Full Stack Developer</span>
             </div>
           </div>
         </div>
