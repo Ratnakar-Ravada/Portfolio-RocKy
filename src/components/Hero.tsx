@@ -36,7 +36,7 @@ export const Hero = () => {
               View Experience
             </a>
             <a 
-              href="#experience"
+              href="https://drive.google.com/file/d/12ONcUkYhWsJyND3JgWlntcJBMjZAiW0u/view?usp=sharing"
               className="px-6 py-3 rounded-lg bg-secondary text-foreground font-medium transition-all hover:bg-secondary/70 hover:shadow-md hover:scale-[1.02]"
             >
               View Resume
