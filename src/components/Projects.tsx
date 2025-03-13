@@ -1,47 +1,79 @@
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
 const projects = [
   {
     title: 'Competitor Analysis',
-    description: 'Interactive dashboard for brands to compare customer sentiment and reviews across multiple platforms and categories.',
-    image: '/placeholder.svg',
+    description: 'Developed an interactive dashboard for brand comparison with advanced visualizations and detailed review insights.',
+    images: [
+      '/Comp-1.png',
+      '/Comp-2.png',
+      '/Comp-3.png',
+      '/Comp-4.png',
+      '/Comp-5.png'
+    ],
     tags: ['React.js', 'Chart.js', 'Flask', 'Amazon DynamoDB', 'REST API'],
     features: [
-      'Real-time visualization of competitor data',
+      'Real-time comparison with Competitors',
       'Interactive filtering by date, sentiment, and platform',
-      'Side panel for detailed review analysis',
-      'Export and sharing capabilities'
+      'Reviews of Group/Category in a side panel for detailed analysis',
+      'Comparision on different basis(Groups, Categories, Sub-categories)'
     ]
   },
   {
     title: 'Automated Report Generator',
-    description: 'AI-driven tool that generates custom reports from customer data with user-defined filters and sends them via email.',
-    image: '/placeholder.svg',
+    description: 'A system that generates custom reports from customer data with user-defined filters and sends them via email.',
+    images: [
+      '/Report-1.png',
+      '/Report-2.png',
+      '/Report-3.png',
+      '/Report-4.png',
+      '/Report-5.png',
+      '/Report-6.png',
+    ],
     tags: ['Python', 'React.js', 'Chart.js', 'Playwright', 'CRON', 'MailChimp'],
     features: [
       'Scheduled reports (daily, weekly, monthly)',
       'Ad-hoc report generation with custom filters',
-      'Branded PDF export options',
-      'Email integration with delivery tracking'
+      'UI same as in the platform maintaining consistency',
     ]
   },
   {
     title: 'Secure File Management System',
     description: 'Web application for secure file storage and sharing with credential-free authentication and encryption.',
-    image: '/placeholder.svg',
+    images: [
+      '/Homepage.png',
+      '/Circle QR-Code.png',
+      '/Circle Authenticated.jpg',
+      '/Dashboard.png',
+      '/File manager.png'
+    ],
     tags: ['Vanilla JS', 'HTML', 'CSS', 'OAuth 2.0', 'Credential-free Authentication'],
     features: [
-      'QR code-based authentication',
-      'End-to-end file encryption',
+      'QR code-based authentication using Circle Access',
+      'End-to-end file encryption by Circle Data',
       'Social media SSO integration',
-      'Granular access control system'
+      'Role-based access'
     ]
   },
   {
     title: 'Pivot Analysis',
     description: 'Analyzing the feedback from customers and displaying the analysis via interactive charts',
-    image: '/placeholder.svg',
+    images: [
+      '/Pivot-1.png',
+      '/Pivot-2.png',
+      '/Pivot-3.png',
+      '/Pivot-4.png'
+    ],
     tags: ['React.js', 'Flask', 'REST API', 'Amazon DynamoDB', 'Chart.js'],
     features: [
-      'Interactive charts (Doughnut and Line)',
+      'Interactive doughnut charts',
+      'Visualized the contrast between filtered and unfiltered data distributions for clearer insights and improved understanding.',
       'Filtering of the reviews based on a key column (Pivot) through a Multi-level Dropdown',
       'Union and Intersection among multiple pivot filters',
     ]
@@ -58,18 +90,30 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="bg-background rounded-xl shadow-lg overflow-hidden reveal card-hover"
+              className="bg-background rounded-xl shadow-lg overflow-hidden reveal card-hover border border-primary hover:border-2"
               style={{ 
                 animationDelay: `${index * 0.1}s`,
                 animationFillMode: 'both'
               }}
             >
-              <div className="h-56 overflow-hidden bg-primary/5">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
-                />
+              <div className="h-64 overflow-hidden">
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {project.images.map((image, imgIndex) => (
+                      <CarouselItem key={imgIndex}>
+                        <div className="h-64 w-full overflow-hidden">
+                        <img 
+                          src={image} 
+                          alt={`${project.title} - Image ${imgIndex + 1}`}
+                          className="w-full h-full object-contain transform transition-transform duration-500"
+                        />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2" />
+                  <CarouselNext className="right-2" />
+                </Carousel>
               </div>
               
               <div className="p-6">
