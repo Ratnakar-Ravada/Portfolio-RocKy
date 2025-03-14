@@ -3,7 +3,7 @@
 This is a **Single Page Portfolio Website** built using **React.js**, **Vite**, **TypeScript**, and **Tailwind CSS**. The project showcases your skills, projects, and a 'Get in Touch' feature that allows visitors to contact you via email.
 
 ## 🚀 Live Demo
-[View Live on Vercel](https://portfolio-psi-wheat-58.vercel.app/)
+[View Live on Vercel](https://ratnakar-portfolio.vercel.app/)
 
 ## 📂 Features
 - Modern and responsive design with Tailwind CSS.
