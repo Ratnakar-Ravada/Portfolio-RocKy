@@ -32,9 +32,10 @@ const projects = [
       '/Report-1.png',
       '/Report-2.png',
       '/Report-3.png',
-      '/Report-4.png',
-      '/Report-5.png',
-      '/Report-6.png',
+      '/Report-4.jpg',
+      '/Report-5.jpg',
+      '/Report-6.jpg',
+      '/Report-7.jpg',
     ],
     tags: ['Python', 'React.js', 'Chart.js', 'Playwright', 'CRON', 'MailChimp'],
     features: [
