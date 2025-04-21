@@ -3,7 +3,7 @@ import { Briefcase, GraduationCap, MapPin, User } from 'lucide-react';
 
 export const About = () => {
   return (
-    <section id="about" className="py-20 bg-secondary/30">
+    <section id="about" className="py-4 bg-secondary/30">
       <div className="section-container">
         <h2 className="section-title reveal">About Me</h2>
         

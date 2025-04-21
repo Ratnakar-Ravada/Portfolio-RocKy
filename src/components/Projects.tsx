@@ -5,8 +5,49 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { ExternalLink } from "lucide-react";
 
 const projects = [
+  {
+    title: 'Meet Scheduler',
+    description: 'A simple and user-friendly interface for scheduling meetings with Google Meet and Google Calendar using Next.js (App Router), NextAuth.js for Google SSO authentication with OAuth 2.0 client.',
+    images: [
+      '/Meet-1.png',
+      '/Meet-2.png',
+      '/Meet-3.png',
+      '/Meet-5.png',
+      '/Meet-4.png'
+    ],
+    tags: ['React.js', 'TypeScript', 'Shadcn UI', 'Google OAuth Client', 'Google SSO with Next-Auth', 'Next.js Router', 'Tailwind CSS', 'Google Calendar API', 'Google Meet API', 'Vercel'],
+    features: [
+      'Google SSO Authentication with NextAuth.js',
+      'Instant meeting creation and deletion using Google Meet API',
+      'Schedule meetings with Google Calendar API integration (Creates an event).',
+      'Meeting Deletion directly removes the event from Google Calendar.',
+      'API server and Frontend server hosted on Vercel for production.'
+    ],
+    liveLink: 'https://meet-scheduler-mvp.vercel.app/',
+    repoLink: 'https://github.com/Ratnakar-Ravada/Meet-Scheduler'
+  },
+  {
+    title: 'Real-time Analytics Dashboard',
+    description: 'A real-time analytics dashboard with dynamic charts, cards, and progress bar with data simulated from a WebSocket server.',
+    images: [
+      '/Analytics Dashboard.png'
+    ],
+    tags: ['React.js', 'TypeScript', 'Shadcn UI', 'WebSockets', 'Node.js', 'Tailwind CSS', 'Recharts', 'Vercel', 'Railway'],
+    features: [
+      'Line Chart for Page Views over time',
+      'Interactive filtering by date, sentiment, and platform',
+      'Cards displaying Active Users and Page Views in the last minute',
+      'Progress Bar for Average Session Duration',
+      'WebSocket-based streaming',
+      'No need to manually reload the page -- Real-time updates',
+      'WebSocket server hosted on Railway and Frontend server hosted on Vercel.'
+    ],
+    liveLink: 'https://realtime-analytics-dashboard.vercel.app/',
+    repoLink: 'https://github.com/Ratnakar-Ravada/realtime-analytics-dashboard'
+  },
   {
     title: 'Competitor Analysis',
     description: 'Developed an interactive dashboard for brand comparison with advanced visualizations and detailed review insights.',
@@ -83,7 +124,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-4">
       <div className="section-container">
         <h2 className="section-title reveal">Featured Projects</h2>
         
@@ -98,28 +139,45 @@ export const Projects = () => {
               }}
             >
               <div className="h-64 overflow-hidden">
-                <Carousel className="w-full">
-                  <CarouselContent>
-                    {project.images.map((image, imgIndex) => (
-                      <CarouselItem key={imgIndex}>
-                        <div className="h-64 w-full overflow-hidden">
-                        <img 
-                          src={image} 
-                          alt={`${project.title} - Image ${imgIndex + 1}`}
-                          className="w-full h-full object-contain transform transition-transform duration-500"
-                        />
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="left-2" />
-                  <CarouselNext className="right-2" />
-                </Carousel>
+                {project.images.length > 1 ? (
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {project.images.map((image, imgIndex) => (
+                        <CarouselItem key={imgIndex}>
+                          <div className="h-64 w-full overflow-hidden">
+                            <img 
+                              src={image} 
+                              alt={`${project.title} - Image ${imgIndex + 1}`}
+                              className="w-full h-full object-contain transform transition-transform duration-500"
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-2" />
+                    <CarouselNext className="right-2" />
+                  </Carousel>
+                ) : (
+                  <img 
+                    src={project.images[0]} 
+                    alt={`${project.title} - Image`}
+                    className="w-full h-full object-contain"
+                  />
+                )}
               </div>
               
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                
+                {(project.liveLink || project.repoLink) && <div className="flex flex-wrap gap-2 mb-6">
+                  {project.liveLink && <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center text-foreground hover:underline">
+                    <span>Live Link</span>
+                    <ExternalLink size={16} className="mr-1" />
+                  </a>}
+                  {project.repoLink && <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center text-foreground hover:underline">
+                    <span>Source Code</span>
+                    <ExternalLink size={16} className="mr-1" />
+                  </a>}
+                </div>}
                 <p className="text-muted-foreground mb-4">
                   {project.description}
                 </p>

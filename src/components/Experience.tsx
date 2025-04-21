@@ -34,7 +34,7 @@ const experiences = [
     ],
     technologies: 'React.js, Python-flask, Amazon DynamoDB, Amazon EC2, Amazon S3, Amazon RDS',
     keyLearnings: 'Working with staging, production environments, Continuous Integration and Continuous Deployment(CI/CD), Nginx, Ubuntu, Linux, Design Patterns, Architectural Solutions, Agile work methods.',
-    packages: 'Chart.js, Ant-Design, React-redux, React-router-dom, React-i18n, React-hooks, Boto3, Sqlalchemy, Scikit, Werkzeug, Flask-Pydantic, Genism, Playwright, PyPDF, Pandas'
+    packages: 'Chart.js, Ant-Design, React-redux, React-router-dom, React-i18n, React-hooks, Boto3, Sqlalchemy, Scikit, Werkzeug, Flask-Pydantic, Gensim, Playwright, PyPDF, Pandas'
   },
   {
     title: 'Software Developer Intern',
@@ -58,7 +58,7 @@ const experiences = [
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-secondary/30">
+    <section id="experience" className="py-4 bg-secondary/30">
       <div className="section-container">
         <h2 className="section-title reveal">Professional Experience</h2>
         

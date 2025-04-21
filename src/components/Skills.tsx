@@ -11,7 +11,7 @@ const skillCategories = [
       { name: 'TypeScript', level: 90 },
       { name: 'React.js', level: 95 },
       { name: 'Next.js', level: 85 },
-      { name: 'Material UI', level: 85 },
+      { name: 'Shadcn UI', level: 85 },
       { name: 'Ant Design', level: 90 },
       { name: 'Tailwind CSS', level: 85}
     ]
@@ -68,7 +68,7 @@ export const Skills = () => {
   const [activeCategory, setActiveCategory] = useState(skillCategories[0].name);
   
   return (
-    <section id="skills" className="py-20 bg-secondary/30">
+    <section id="skills" className="py-4 bg-secondary/30">
       <div className="section-container">
         <h2 className="section-title reveal">Technical Skills</h2>
         

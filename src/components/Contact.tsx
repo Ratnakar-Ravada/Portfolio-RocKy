@@ -58,7 +58,7 @@ export const Contact = () => {
   
   
   return (
-    <section id="contact" className="py-20 bg-secondary/30">
+    <section id="contact" className="py-4 bg-secondary/30">
       <div className="section-container">
         <h2 className="section-title reveal">Get In Touch</h2>
         
