@@ -48,14 +48,6 @@ export const Footer = () => {
               <Mail className="w-5 h-5" />
             </a>
           </div>
-          
-          <button
-            onClick={scrollToTop}
-            className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-all"
-            aria-label="Scroll to top"
-          >
-            <ArrowUp className="w-5 h-5" />
-          </button>
         </div>
       </div>
     </footer>
