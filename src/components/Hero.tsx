@@ -19,7 +19,7 @@ export const Hero = () => {
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
             Building elegant and high-performance web applications with passion and precision.
-            Specialized in full-stack development with modern JavaScript, Python frameworks and AWS Ecosystem.
+            Specialized in full-stack development with modern JavaScript, Python frameworks, AWS Ecosystems and getting famirialized with the latest Gen-AI technologies.
           </p>
           
           <div className="flex flex-wrap gap-4">
@@ -35,13 +35,13 @@ export const Hero = () => {
             >
               View Experience
             </a>
-            <a 
+            {/* <a 
               href="https://drive.google.com/file/d/12ONcUkYhWsJyND3JgWlntcJBMjZAiW0u/view?usp=sharing"
               className="px-6 py-3 rounded-lg bg-secondary text-foreground font-medium transition-all hover:bg-secondary/70 hover:shadow-md hover:scale-[1.02]"
               target='_blank'
             >
               View Resume
-            </a>
+            </a> */}
           </div>
           
           <div className="flex items-center space-x-4 mt-8">

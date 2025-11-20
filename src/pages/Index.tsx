@@ -2,12 +2,14 @@
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import Disclaimer from '@/components/Disclaimer';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 const Index = () => {
   useEffect(() => {
@@ -42,12 +44,14 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <Disclaimer />
       <About />
       <Experience />
       <Skills />
       <Projects />
       <Contact />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 };
