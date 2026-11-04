@@ -1,0 +1,74 @@
+:root {
+  --paper: #f4f7fb;
+  --ink: #14233a;
+  --accent: #2356d9;
+  --muted: #526178;
+  --line: #d6dfec;
+  --surface: #fff;
+  --navy: #111d30;
+  --lime: #dff08a;
+}
+.site-header {
+  background: #f4f7fb;
+}
+.wordmark-symbol > span,
+.footer-mark > span {
+  color: var(--accent);
+}
+.project-preview {
+  background: #dce7f6;
+  border-color: #c5d4e9;
+}
+.project-card:nth-child(even) .project-preview {
+  background: #e7edf5;
+  border-color: #cbd8e7;
+}
+.project-image-wrap img {
+  border-color: #c1cfe1;
+  box-shadow: 0 14px 28px #14233a14;
+}
+.project-card:hover .project-card-arrow {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.project-row:hover {
+  background: #2356d906;
+}
+.contact-section {
+  background: #eaf0f8;
+}
+.form-heading {
+  border-color: var(--line);
+}
+.contact-form input,
+.contact-form textarea {
+  border-color: #b8c8de;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #61738b;
+}
+.quick-find-results > a:hover,
+.quick-find-results > button:hover,
+.quick-find-results > a:focus-visible,
+.quick-find-results > button:focus-visible {
+  background: #e2ebf8;
+}
+.quick-find::backdrop {
+  background: #111d3090;
+}
+.project-reader::backdrop {
+  background: #111d30b8;
+}
+.project-reader__image-stage,
+.project-reader__thumbnail {
+  background: #e1e9f4;
+}
+.project-reader__section > p:not(.project-reader__section-label),
+.project-reader__features li {
+  color: var(--muted);
+}
+.footer-cursor {
+  animation: none;
+  color: var(--accent);
+}

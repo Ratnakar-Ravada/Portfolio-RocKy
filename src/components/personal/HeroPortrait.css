@@ -1,0 +1,53 @@
+.hero-portrait__images {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #dce5f0;
+}
+
+.hero-portrait__images .hero-portrait__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+.hero-portrait__images .hero-portrait__image[data-portrait="tech-enthusiast"] {
+  object-position: 64% 0%;
+}
+.hero-portrait__images .hero-portrait__image[data-portrait="gamer"] {
+  object-position: 68% 0%;
+}
+
+.hero-portrait__image--previous {
+  z-index: 0;
+}
+.hero-portrait__image--current {
+  z-index: 1;
+}
+.hero-portrait__image--arriving {
+  animation: hero-portrait-arrive 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-portrait-arrive {
+  from {
+    opacity: 0;
+    transform: translateX(12px) scale(1.015);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-portrait__image--arriving {
+    animation: none;
+  }
+  .hero-portrait__image--previous {
+    display: none;
+  }
+}

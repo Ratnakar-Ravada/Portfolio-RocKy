@@ -1,0 +1,353 @@
+.system-sketch {
+  width: 100%;
+  max-width: 450px;
+  color: var(--ink, #202720);
+  background: var(--paper, #f3f0e7);
+  border: 1px solid var(--line, #d6d6cb);
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+}
+
+.system-sketch__heading {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  min-height: 40px;
+  padding: 0 17px;
+  border-bottom: 1px solid var(--line, #d6d6cb);
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.system-sketch__heading > :first-child {
+  color: var(--accent, #b83b19);
+}
+
+.system-sketch__heading-mark {
+  margin-left: auto;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.system-sketch__diagram {
+  display: block;
+  width: 100%;
+  height: 300px;
+  overflow: visible;
+}
+
+.system-sketch__grid-dot {
+  fill: var(--line, #d6d6cb);
+  opacity: 0.7;
+}
+
+.system-sketch__registration {
+  fill: none;
+  stroke: var(--muted, #656d60);
+  stroke-width: 0.65;
+  opacity: 0.66;
+}
+
+.system-sketch__orbit {
+  fill: none;
+  stroke: var(--muted, #656d60);
+  stroke-width: 0.9;
+  stroke-dasharray: 2 5;
+  opacity: 0.65;
+}
+
+.system-sketch__orbit--secondary {
+  stroke: var(--accent, #b83b19);
+  stroke-dasharray: 2 4;
+  opacity: 0.44;
+}
+
+.system-sketch__axis {
+  fill: none;
+  stroke: var(--line, #d6d6cb);
+  stroke-width: 0.75;
+}
+
+.system-sketch__packet {
+  fill: var(--accent, #b83b19);
+  stroke: var(--paper, #f3f0e7);
+  stroke-width: 3;
+  offset-path: path(
+    "M68 166C68 78 177 41 277 65C378 89 404 195 323 268C246 336 106 296 68 216C60 199 60 182 68 166Z"
+  );
+  offset-distance: 16%;
+  animation: system-sketch-packet 24s linear infinite;
+}
+
+.system-sketch__node-panel {
+  fill: var(--paper, #f3f0e7);
+  stroke: var(--muted, #656d60);
+  stroke-width: 0.85;
+  transition:
+    fill 220ms ease,
+    stroke 220ms ease;
+}
+
+.system-sketch__node-icon {
+  fill: none;
+  stroke: var(--muted, #656d60);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 220ms ease;
+}
+
+.system-sketch__node-leader {
+  fill: none;
+  stroke: var(--muted, #656d60);
+  stroke-width: 0.8;
+  transition: stroke 220ms ease;
+}
+
+.system-sketch__tiny-label,
+.system-sketch__machine-label {
+  fill: var(--muted, #656d60);
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-size: 6.6px;
+  letter-spacing: 0.055em;
+}
+
+.system-sketch[data-mode="build"]
+  .system-sketch__node--build
+  .system-sketch__node-panel,
+.system-sketch[data-mode="play"]
+  .system-sketch__node--play
+  .system-sketch__node-panel,
+.system-sketch[data-mode="reset"]
+  .system-sketch__node--reset
+  .system-sketch__node-panel {
+  fill: #ede3d6;
+  stroke: var(--accent, #b83b19);
+}
+
+.system-sketch[data-mode="build"]
+  .system-sketch__node--build
+  .system-sketch__node-icon,
+.system-sketch[data-mode="play"]
+  .system-sketch__node--play
+  .system-sketch__node-icon,
+.system-sketch[data-mode="reset"]
+  .system-sketch__node--reset
+  .system-sketch__node-icon,
+.system-sketch[data-mode="build"]
+  .system-sketch__node--build
+  .system-sketch__node-leader,
+.system-sketch[data-mode="play"]
+  .system-sketch__node--play
+  .system-sketch__node-leader,
+.system-sketch[data-mode="reset"]
+  .system-sketch__node--reset
+  .system-sketch__node-leader {
+  stroke: var(--accent, #b83b19);
+}
+
+.system-sketch__computer-depth {
+  fill: #deded2;
+  stroke: var(--ink, #202720);
+  stroke-width: 1.25;
+  stroke-linejoin: round;
+}
+
+.system-sketch__computer-case {
+  fill: var(--paper, #f3f0e7);
+  stroke: var(--ink, #202720);
+  stroke-width: 1.5;
+}
+
+.system-sketch__screen {
+  fill: var(--ink, #202720);
+}
+
+.system-sketch__screen-line {
+  fill: none;
+  stroke: #8c978a;
+  stroke-width: 0.7;
+}
+
+.system-sketch__glyph {
+  fill: #f08a59;
+}
+
+.system-sketch__case-detail {
+  fill: none;
+  stroke: var(--ink, #202720);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+}
+
+.system-sketch__power {
+  fill: var(--accent, #b83b19);
+}
+
+.system-sketch__keyboard {
+  fill: #e5e4d8;
+  stroke: var(--ink, #202720);
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+
+.system-sketch__keyboard-keys {
+  fill: none;
+  stroke: var(--muted, #656d60);
+  stroke-width: 0.65;
+}
+
+.system-sketch__machine-label {
+  font-size: 6px;
+  letter-spacing: 0.13em;
+}
+
+.system-sketch__measurement {
+  fill: var(--muted, #656d60);
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-size: 6px;
+  letter-spacing: 0.1em;
+}
+
+.system-sketch__measurement path {
+  fill: none;
+  stroke: var(--muted, #656d60);
+  stroke-width: 0.6;
+}
+
+.system-sketch__controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line, #d6d6cb);
+  border-bottom: 1px solid var(--line, #d6d6cb);
+}
+
+.system-sketch__control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  min-width: 0;
+  min-height: 47px;
+  margin: 0;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 0;
+  color: var(--muted, #656d60);
+  background: transparent;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.system-sketch__control + .system-sketch__control {
+  border-left: 1px solid var(--line, #d6d6cb);
+}
+
+.system-sketch__control-index {
+  font-size: 8px;
+  opacity: 0.75;
+}
+
+.system-sketch__control-indicator {
+  width: 4px;
+  height: 4px;
+  margin-left: auto;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.system-sketch__control[aria-pressed="true"] {
+  color: var(--accent, #b83b19);
+  background: #ede7dc;
+}
+
+.system-sketch__control[aria-pressed="true"] .system-sketch__control-indicator {
+  background: currentColor;
+}
+
+.system-sketch__control:hover {
+  color: var(--ink, #202720);
+  background: #e9e7dc;
+}
+
+.system-sketch__control:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid var(--accent, #b83b19);
+  outline-offset: -4px;
+}
+
+.system-sketch__caption {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 69px;
+  padding: 15px 17px;
+  color: var(--muted, #656d60);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.system-sketch__caption-symbol {
+  color: var(--accent, #b83b19);
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.system-sketch__caption p {
+  max-width: 32em;
+  margin: 0;
+}
+
+@keyframes system-sketch-packet {
+  to {
+    offset-distance: 116%;
+  }
+}
+
+@media (max-width: 480px) {
+  .system-sketch__diagram {
+    height: auto;
+  }
+
+  .system-sketch__heading {
+    gap: 15px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .system-sketch__control {
+    gap: 7px;
+    padding-right: 11px;
+    padding-left: 11px;
+    font-size: 10px;
+  }
+
+  .system-sketch__caption {
+    min-height: 76px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .system-sketch__packet {
+    animation: none;
+  }
+
+  .system-sketch__node-panel,
+  .system-sketch__node-icon,
+  .system-sketch__node-leader,
+  .system-sketch__control {
+    transition: none;
+  }
+}

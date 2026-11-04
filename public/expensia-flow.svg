@@ -1,0 +1,83 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="expensia-title expensia-description">
+  <title id="expensia-title">Expensia: expense claims with policy context and visual evidence</title>
+  <desc id="expensia-description">Product overview of the full Expensia application. It addresses manual reimbursement, fragmented HRMS, ERP, and travel context, and delayed compliance and anomaly checks. Claim details and receipt OCR are brought together. RAG retrieves supporting context. Image RAG compares receipt similarity to flag possible duplicates or fabrication. Explained policy checks and anomaly signals support approval or human review, with exceptions routed to managers or administrators.</desc>
+  <defs>
+    <linearGradient id="expensia-paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f7fb"/>
+      <stop offset="1" stop-color="#eaf0f9"/>
+    </linearGradient>
+    <pattern id="expensia-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity=".045"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#expensia-paper)"/>
+  <path d="M64 211H1536M64 881H1536" fill="none" stroke="#c5d3e7" stroke-width="2"/>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <path d="M64 58h40" stroke="#2356d9" stroke-width="4"/>
+    <text x="120" y="65" fill="#2356d9" font-size="22" font-weight="700" letter-spacing="3">EXPENSIA</text>
+    <text x="1536" y="65" text-anchor="end" fill="#526178" font-size="18" letter-spacing="2">PRODUCT OVERVIEW / FULL APPLICATION</text>
+    <text x="64" y="135" fill="#14233a" font-size="52" font-weight="600" letter-spacing="-1.9">Expense claims, with the evidence in view.</text>
+    <text x="64" y="178" fill="#526178" font-size="25">One review connects the claim, the policy, and the receipt behind it.</text>
+
+    <rect x="64" y="250" width="402" height="590" fill="#14233a"/>
+    <rect x="64" y="250" width="402" height="590" fill="url(#expensia-grid)"/>
+    <rect x="64" y="250" width="4" height="590" fill="#2356d9"/>
+    <text x="94" y="292" fill="#dff08a" font-size="19" font-weight="700" letter-spacing="2">THE PROBLEM</text>
+    <text x="94" y="344" fill="#ffffff" font-size="34" font-weight="600" letter-spacing="-.8">Too many loose ends</text>
+    <text x="94" y="384" fill="#ffffff" font-size="34" font-weight="600" letter-spacing="-.8">in a single claim.</text>
+
+    <path d="M94 418H436M94 553H436M94 688H436" stroke="#40516b" fill="none"/>
+    <path d="M94 450h18M94 585h18M94 720h18" stroke="#dff08a" stroke-width="3"/>
+    <text x="126" y="458" fill="#ffffff" font-size="25" font-weight="600">Manual reimbursement</text>
+    <text x="94" y="498" fill="#bacbe3" font-size="23">Claims move through manual</text>
+    <text x="94" y="529" fill="#bacbe3" font-size="23">checks and follow-ups.</text>
+    <text x="126" y="593" fill="#ffffff" font-size="25" font-weight="600">Fragmented context</text>
+    <text x="94" y="633" fill="#bacbe3" font-size="23">HRMS, ERP, and travel context</text>
+    <text x="94" y="664" fill="#bacbe3" font-size="23">sit apart from the claim.</text>
+    <text x="126" y="728" fill="#ffffff" font-size="25" font-weight="600">Delayed checks</text>
+    <text x="94" y="768" fill="#bacbe3" font-size="23">Compliance and anomaly checks</text>
+    <text x="94" y="799" fill="#bacbe3" font-size="23">need a clear review path.</text>
+
+    <text x="506" y="276" fill="#2356d9" font-size="19" font-weight="700" letter-spacing="2">HOW EXPENSIA HELPS</text>
+
+    <rect x="506" y="299" width="1030" height="109" fill="#ffffff" stroke="#c5d3e7"/>
+    <text x="532" y="364" fill="#2356d9" font-size="38" font-weight="500">01</text>
+    <text x="605" y="342" fill="#14233a" font-size="29" font-weight="600" letter-spacing="-.4">Bring the claim together.</text>
+    <text x="605" y="382" fill="#526178" font-size="23">Capture claim details and use OCR to read receipts.</text>
+    <path d="M1021 409v27m-7-7 7 7 7-7" fill="none" stroke="#8aa5ce" stroke-width="2"/>
+
+    <rect x="506" y="446" width="1030" height="224" fill="#dfe9fa" stroke="#aebfe0"/>
+    <text x="532" y="483" fill="#2356d9" font-size="20" font-weight="700" letter-spacing="1.2">02 / GROUND THE REVIEW IN EVIDENCE</text>
+    <rect x="532" y="505" width="476" height="139" fill="#2356d9"/>
+    <rect x="1034" y="505" width="476" height="139" fill="#14233a"/>
+
+    <g fill="none" stroke="#cbdcff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M953 528h27v33h-27zM958 536h17M958 543h17M958 550h11"/>
+      <path d="M1453 528h31v31h-31zM1458 552l7-8 7 5 5-6 7 9"/>
+      <circle cx="1463" cy="537" r="2.5"/>
+    </g>
+    <text x="555" y="551" fill="#ffffff" font-size="36" font-weight="600" letter-spacing="-.5">RAG</text>
+    <text x="555" y="590" fill="#eef4ff" font-size="23">Retrieve supporting</text>
+    <text x="555" y="620" fill="#eef4ff" font-size="23">claim context.</text>
+    <text x="1057" y="551" fill="#dff08a" font-size="36" font-weight="600" letter-spacing="-.5">Image RAG</text>
+    <text x="1057" y="590" fill="#d6e4f7" font-size="23">Compare receipt similarity.</text>
+    <text x="1057" y="620" fill="#d6e4f7" font-size="23">Flag possible duplicates or fabrication.</text>
+    <path d="M1021 671v27m-7-7 7 7 7-7" fill="none" stroke="#8aa5ce" stroke-width="2"/>
+
+    <rect x="506" y="709" width="1030" height="131" fill="#ffffff" stroke="#c5d3e7"/>
+    <text x="532" y="776" fill="#2356d9" font-size="38" font-weight="500">03</text>
+    <text x="605" y="752" fill="#14233a" font-size="29" font-weight="600" letter-spacing="-.4">Make the review explainable.</text>
+    <text x="605" y="790" fill="#526178" font-size="23">Check policy alignment and anomaly signals. Show reasons.</text>
+    <text x="605" y="820" fill="#526178" font-size="23">Route exceptions to manager or administrator review.</text>
+
+    <text x="64" y="924" fill="#2356d9" font-size="18" font-weight="700" letter-spacing="1.8">THE RESULT</text>
+    <text x="64" y="967" fill="#14233a" font-size="27" font-weight="600" letter-spacing="-.35">Claim details + policy context + visual evidence</text>
+    <path d="M697 957h50m-10-9 10 9-10 9" fill="none" stroke="#2356d9" stroke-width="3"/>
+    <text x="771" y="967" fill="#14233a" font-size="27" font-weight="600" letter-spacing="-.35">Approval or review, with reasons.</text>
+    <text x="1536" y="967" text-anchor="end" fill="#526178" font-size="18" letter-spacing="1.2">RAG + IMAGE RAG</text>
+  </g>
+</svg>
