@@ -252,13 +252,13 @@ button {
 }
 .wordmark-name {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.5;
   letter-spacing: 0.8px;
 }
 .wordmark-name > span {
   display: block;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.5px;
   color: var(--muted);
   margin-top: 4px;

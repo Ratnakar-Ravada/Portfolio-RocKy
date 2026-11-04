@@ -423,7 +423,7 @@ function Workbench() {
               aria-hidden="true"
             />
             <span className="wordmark-name">
-              RATNAKAR RAVADA<span>DEVELOPER & CURIOUS HUMAN</span>
+              RatnaKar a.k.a RocKy<span>Rare • Real • Relentless</span>
             </span>
           </a>
           <nav
