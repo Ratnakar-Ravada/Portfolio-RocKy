@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formState, setFormState] = useState({
