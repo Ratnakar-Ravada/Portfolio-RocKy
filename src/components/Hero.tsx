@@ -77,7 +77,7 @@ export const Hero = () => {
           <div className="relative">
             {/* Replace with your actual image */}
             <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-primary shadow-xl animate-float">
-                <img src='/Photo DP.jpg' alt='img'/>
+                <img src='/Photo DP.webp' alt='img'/>
             </div>
             
             <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-full bg-background border shadow-lg animate-scale-in">

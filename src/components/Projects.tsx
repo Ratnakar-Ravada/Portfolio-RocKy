@@ -12,11 +12,11 @@ const projects = [
     title: 'Meet Scheduler',
     description: 'A simple and user-friendly interface for scheduling meetings with Google Meet and Google Calendar using Next.js (App Router), NextAuth.js for Google SSO authentication with OAuth 2.0 client.',
     images: [
-      '/Meet-1.png',
-      '/Meet-2.png',
-      '/Meet-3.png',
-      '/Meet-5.png',
-      '/Meet-4.png'
+      '/Meet-1.webp',
+      '/Meet-2.webp',
+      '/Meet-3.webp',
+      '/Meet-5.webp',
+      '/Meet-4.webp'
     ],
     tags: ['React.js', 'TypeScript', 'Shadcn UI', 'Google OAuth Client', 'Google SSO with Next-Auth', 'Next.js Router', 'Tailwind CSS', 'Google Calendar API', 'Google Meet API', 'Vercel'],
     features: [
@@ -33,7 +33,7 @@ const projects = [
     title: 'Real-time Analytics Dashboard',
     description: 'A real-time analytics dashboard with dynamic charts, cards, and progress bar with data simulated from a WebSocket server.',
     images: [
-      '/Analytics Dashboard.png'
+      '/Analytics Dashboard.webp'
     ],
     tags: ['React.js', 'TypeScript', 'Shadcn UI', 'WebSockets', 'Node.js', 'Tailwind CSS', 'Recharts', 'Vercel', 'Railway'],
     features: [
@@ -52,11 +52,11 @@ const projects = [
     title: 'Competitor Analysis',
     description: 'Developed an interactive dashboard for brand comparison with advanced visualizations and detailed review insights.',
     images: [
-      '/Comp-1.png',
-      '/Comp-2.png',
-      '/Comp-3.png',
-      '/Comp-4.png',
-      '/Comp-5.png'
+      '/Comp-1.webp',
+      '/Comp-2.webp',
+      '/Comp-3.webp',
+      '/Comp-4.webp',
+      '/Comp-5.webp'
     ],
     tags: ['React.js', 'Chart.js', 'Flask', 'Amazon DynamoDB', 'REST API'],
     features: [
@@ -70,13 +70,13 @@ const projects = [
     title: 'Automated Report Generator',
     description: 'A system that generates custom reports from customer data with user-defined filters and sends them via email.',
     images: [
-      '/Report-1.png',
-      '/Report-2.png',
-      '/Report-3.png',
-      '/Report-4.jpg',
-      '/Report-5.jpg',
-      '/Report-6.jpg',
-      '/Report-7.jpg',
+      '/Report-1.webp',
+      '/Report-2.webp',
+      '/Report-3.webp',
+      '/Report-4.webp',
+      '/Report-5.webp',
+      '/Report-6.webp',
+      '/Report-7.webp',
     ],
     tags: ['Python', 'React.js', 'Chart.js', 'Playwright', 'CRON', 'MailChimp'],
     features: [
@@ -89,11 +89,11 @@ const projects = [
     title: 'Secure File Management System',
     description: 'Web application for secure file storage and sharing with credential-free authentication and encryption.',
     images: [
-      '/Homepage.png',
-      '/Circle QR-Code.png',
-      '/Circle Authenticated.jpg',
-      '/Dashboard.png',
-      '/File manager.png'
+      '/Homepage.webp',
+      '/Circle QR-Code.webp',
+      '/Circle Authenticated.webp',
+      '/Dashboard.webp',
+      '/File manager.webp'
     ],
     tags: ['Vanilla JS', 'HTML', 'CSS', 'OAuth 2.0', 'Credential-free Authentication'],
     features: [
@@ -107,10 +107,10 @@ const projects = [
     title: 'Pivot Analysis',
     description: 'Analyzing the feedback from customers and displaying the analysis via interactive charts',
     images: [
-      '/Pivot-1.png',
-      '/Pivot-2.png',
-      '/Pivot-3.png',
-      '/Pivot-4.png'
+      '/Pivot-1.webp',
+      '/Pivot-2.webp',
+      '/Pivot-3.webp',
+      '/Pivot-4.webp'
     ],
     tags: ['React.js', 'Flask', 'REST API', 'Amazon DynamoDB', 'Chart.js'],
     features: [
