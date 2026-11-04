@@ -8,6 +8,7 @@ import {
   Linkedin,
   Mail,
   Menu,
+  MessageSquare,
   Search,
   Send,
   X,
@@ -457,9 +458,16 @@ function Workbench() {
               <Search />
               <kbd>Ctrl K</kbd>
             </button>
-            <a className="header-contact" href="#contact">
-              Say hello
-              <ArrowUpRight />
+            <a
+              className="header-contact"
+              href="#contact"
+              onClick={() => setMobileOpen(false)}
+              aria-label="Say hello - Contact me"
+              title="Say hello - Contact me"
+            >
+              <MessageSquare className="header-contact__icon" aria-hidden="true" />
+              <span className="header-contact__text">Say hello</span>
+              <ArrowUpRight className="header-contact__arrow" aria-hidden="true" />
             </a>
             <button
               ref={menuRef}
