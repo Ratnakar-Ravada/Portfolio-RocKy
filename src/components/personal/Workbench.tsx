@@ -12,7 +12,7 @@ import {
   Send,
   X,
 } from "lucide-react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import PortfolioHero from "./PortfolioHero";
 import SkillsSection from "./SkillsSection";
 import ExperienceSection from "./ExperienceSection";
