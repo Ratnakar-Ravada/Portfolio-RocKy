@@ -1,0 +1,52 @@
+export const portraitSlides = [
+  {
+    id: "software-engineer",
+    title: "Software Engineer",
+    image: "/software_engineer.png",
+    width: 1536,
+    height: 1024,
+  },
+  {
+    id: "badminton-player",
+    title: "Badminton Player",
+    image: "/badminton_player.png",
+    width: 1080,
+    height: 1456,
+  },
+  {
+    id: "movie-geek",
+    title: "Movie geek",
+    image: "/movie_geek.png",
+    width: 382,
+    height: 452,
+  },
+  {
+    id: "foodie",
+    title: "Foodie",
+    image: "/foodie.png",
+    width: 506,
+    height: 429,
+  },
+  {
+    id: "wanderer",
+    title: "Wanderer",
+    image: "/wanderer.png",
+    width: 1672,
+    height: 941,
+  },
+  {
+    id: "tech-enthusiast",
+    title: "Tech Enthusiast",
+    image: "/tech_enthusiast.png",
+    width: 3840,
+    height: 2160,
+  },
+  {
+    id: "gamer",
+    title: "Gamer",
+    image: "/gamer.png",
+    width: 3840,
+    height: 2160,
+  },
+  { id: "cook", title: "Cook", image: "/cook.png", width: 498, height: 425 },
+];

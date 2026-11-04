@@ -1,0 +1,207 @@
+.education-section {
+  padding-block: 53px 58px;
+  background: #fff;
+  border-bottom: 1px solid var(--line, #d6dfec);
+  scroll-margin-top: 95px;
+}
+
+.education-label {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 27px;
+  color: var(--accent, #2356d9);
+}
+
+.education-label > svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 1.6;
+}
+.education-label h2 {
+  margin: 0;
+  color: var(--ink, #14233a);
+  font: 500 clamp(27px, 3vw, 38px)/1.2 var(--sans, sans-serif);
+  letter-spacing: -1.2px;
+}
+.education-label > span {
+  margin-left: auto;
+  color: var(--muted, #526178);
+  font: 9px/1.5 var(--mono, monospace);
+  letter-spacing: 1px;
+}
+
+.education-record {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 55px;
+  position: relative;
+  padding: 29px 0 29px 31px;
+  border-block: 1px solid var(--line, #d6dfec);
+}
+
+.education-record::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 29px;
+  bottom: 29px;
+  width: 3px;
+  background: var(--accent, #2356d9);
+  transform-origin: top;
+  transition: transform 280ms ease;
+}
+.education-record:hover::before,
+.education-record:focus-within::before {
+  transform: scaleY(0.72);
+}
+.education-period {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted, #526178);
+  font: 10px/1.5 var(--mono, monospace);
+  white-space: nowrap;
+}
+.education-period-line {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: #a7b9d2;
+}
+.education-status {
+  margin: 0 0 12px;
+  color: var(--accent, #2356d9);
+  font: 8px/1.5 var(--mono, monospace);
+  letter-spacing: 1px;
+}
+.education-qualification h3 {
+  margin: 0 0 12px;
+  color: var(--ink, #14233a);
+  font: 500 clamp(25px, 2.4vw, 34px)/1.15 var(--sans, sans-serif);
+  letter-spacing: -1px;
+}
+.education-degree {
+  margin: 0 0 3px;
+  color: var(--ink, #14233a);
+  font: 400 14px/1.65 var(--sans, sans-serif);
+}
+.education-field {
+  margin: 0;
+  color: var(--muted, #526178);
+  font: 400 12px/1.65 var(--sans, sans-serif);
+}
+.education-certificate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  min-height: 44px;
+  padding-block: 10px;
+  color: var(--accent, #2356d9);
+  border-bottom: 1px solid #a9bfe8;
+  font: 400 11px/1.5 var(--mono, monospace);
+}
+.education-certificate > svg {
+  width: 17px;
+  height: 17px;
+  transition: transform 180ms ease;
+}
+.education-certificate:hover > svg {
+  transform: translate(3px, -3px);
+}
+.education-certificate:focus-visible {
+  outline: 2px solid var(--accent, #2356d9);
+  outline-offset: 5px;
+}
+
+@media (max-width: 1180px) {
+  .education-record {
+    grid-template-columns: 145px minmax(0, 1fr) auto;
+    column-gap: 28px;
+  }
+  .education-period {
+    gap: 9px;
+    font-size: 9px;
+  }
+  .education-period-line {
+    width: 12px;
+  }
+  .education-certificate {
+    max-width: 190px;
+    gap: 13px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .education-record {
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: 17px;
+  }
+  .education-period {
+    grid-column: 1 / -1;
+  }
+  .education-qualification {
+    grid-column: 1;
+  }
+  .education-certificate {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .education-section {
+    padding-block: 36px 39px;
+  }
+  .education-label {
+    margin-bottom: 20px;
+  }
+  .education-label > span {
+    font-size: 7px;
+    letter-spacing: 0.6px;
+  }
+  .education-record {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 22px;
+    padding: 24px 0 25px 21px;
+  }
+  .education-record::before {
+    top: 24px;
+    bottom: 25px;
+    width: 2px;
+  }
+  .education-period,
+  .education-qualification,
+  .education-certificate {
+    grid-column: 1;
+  }
+  .education-status {
+    margin-bottom: 9px;
+  }
+  .education-qualification h3 {
+    font-size: 29px;
+  }
+  .education-degree {
+    font-size: 13px;
+  }
+  .education-certificate {
+    justify-self: start;
+    max-width: none;
+    font-size: 10px;
+    gap: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .education-record::before,
+  .education-certificate > svg {
+    transition: none;
+  }
+  .education-record:hover::before,
+  .education-record:focus-within::before,
+  .education-certificate:hover > svg {
+    transform: none;
+  }
+}

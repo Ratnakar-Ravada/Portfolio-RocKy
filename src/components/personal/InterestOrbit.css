@@ -1,0 +1,376 @@
+.interest-orbit {
+  --orbit-turn: 0deg;
+  --orbit-ice: #f4f7fb;
+  --orbit-blue: #a8c6ff;
+  --orbit-lime: #dff08a;
+  width: min(100%, 530px);
+  color: var(--orbit-ice);
+  isolation: isolate;
+}
+.interest-orbit__heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 0 25px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: 10px;
+  letter-spacing: 0.045em;
+  color: #b5c0d3;
+}
+.interest-orbit__index {
+  color: var(--orbit-lime);
+  white-space: nowrap;
+}
+.interest-orbit__index > span {
+  color: #708099;
+}
+.interest-orbit__wheel {
+  aspect-ratio: 1;
+  position: relative;
+  width: 100%;
+  margin-top: 14px;
+}
+.interest-orbit__ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.interest-orbit__ring--outer {
+  inset: 8%;
+  border: 1px solid rgb(168 198 255 / 17%);
+}
+.interest-orbit__ring--middle {
+  inset: 13.5%;
+  border: 1px solid rgb(168 198 255 / 6%);
+}
+.interest-orbit__ring--inner {
+  inset: 16%;
+  border: 1px dashed rgb(168 198 255 / 13%);
+  animation: orbit-fine-ring 90s linear infinite;
+}
+.interest-orbit__ticks {
+  position: absolute;
+  inset: 11%;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgb(168 198 255 / 20%) 0deg 0.35deg,
+    transparent 0.35deg 10deg
+  );
+  mask: radial-gradient(
+    circle,
+    transparent 68.5%,
+    #000 69%,
+    #000 70%,
+    transparent 70.5%
+  );
+  opacity: 0.65;
+  pointer-events: none;
+}
+.interest-orbit__stage {
+  position: absolute;
+  inset: 18.8%;
+  overflow: hidden;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    #20344f 0,
+    #17283f 46%,
+    #101d30 90%
+  );
+  box-shadow:
+    inset 0 0 0 1px rgb(168 198 255 / 17%),
+    inset 0 0 24px rgb(4 12 25 / 40%),
+    0 8px 34px rgb(4 9 20 / 20%);
+}
+.interest-orbit__stage::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 -18px 30px rgb(11 20 35 / 28%);
+  pointer-events: none;
+}
+.interest-orbit__stage-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.13;
+  background-image:
+    linear-gradient(rgb(168 198 255 / 16%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(168 198 255 / 16%) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask: radial-gradient(ellipse, #000, transparent 72%);
+}
+.interest-orbit__scene {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+}
+.interest-orbit__scene--current {
+  animation: orbit-scene-enter 0.65s cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+.interest-orbit__scene--leaving {
+  animation: orbit-scene-leave 0.55s ease both;
+  pointer-events: none;
+}
+.interest-orbit__scene-label {
+  position: absolute;
+  inset: auto 0 8.5%;
+  text-align: center;
+  color: #afc3e0;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: clamp(7px, 1vw, 9px);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.interest-orbit__nodes {
+  position: absolute;
+  inset: 0;
+  transform: rotate(var(--orbit-turn));
+  transition: transform 1.05s cubic-bezier(0.3, 0.05, 0.16, 1);
+  pointer-events: none;
+}
+.interest-orbit__slot {
+  position: absolute;
+  inset: 8%;
+  transform: rotate(var(--node-angle));
+  pointer-events: none;
+}
+.interest-orbit__slot--0 {
+  --node-angle: 0deg;
+}
+.interest-orbit__slot--1 {
+  --node-angle: 51.428571deg;
+}
+.interest-orbit__slot--2 {
+  --node-angle: 102.857143deg;
+}
+.interest-orbit__slot--3 {
+  --node-angle: 154.285714deg;
+}
+.interest-orbit__slot--4 {
+  --node-angle: 205.714286deg;
+}
+.interest-orbit__slot--5 {
+  --node-angle: 257.142857deg;
+}
+.interest-orbit__slot--6 {
+  --node-angle: 308.571429deg;
+}
+.interest-orbit__node {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 80px;
+  min-height: 60px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #92a4bf;
+  transform: translate(-50%, -37%)
+    rotate(calc(0deg - var(--node-angle) - var(--orbit-turn)));
+  transition:
+    transform 1.05s cubic-bezier(0.3, 0.05, 0.16, 1),
+    color 0.3s ease;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+.interest-orbit__node-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #34435a;
+  background: #142136;
+  box-shadow: 0 0 0 6px #111d30;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.interest-orbit__node-icon svg {
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+.interest-orbit__node-label {
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: 9px;
+  line-height: 1.25;
+  white-space: nowrap;
+  background: #111d30;
+  padding: 1px 4px;
+}
+.interest-orbit__node[aria-pressed="true"] {
+  color: var(--orbit-lime);
+}
+.interest-orbit__node[aria-pressed="true"] .interest-orbit__node-icon {
+  color: #111d30;
+  background: var(--orbit-lime);
+  border-color: var(--orbit-lime);
+  box-shadow:
+    0 0 0 6px #111d30,
+    0 0 0 7px rgb(223 240 138 / 20%);
+}
+.interest-orbit__node:hover {
+  color: var(--orbit-ice);
+}
+.interest-orbit__node:hover .interest-orbit__node-icon {
+  border-color: #a8c6ff;
+}
+.interest-orbit__node:focus-visible {
+  outline: none;
+}
+.interest-orbit__node:focus-visible .interest-orbit__node-icon {
+  outline: 2px solid var(--orbit-ice);
+  outline-offset: 5px;
+}
+.interest-orbit__transport {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 15px 25px 0;
+}
+.interest-orbit__progress {
+  display: block;
+  width: 74px;
+  height: 2px;
+  background: #2c3a50;
+  overflow: hidden;
+}
+.interest-orbit__progress > span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--orbit-lime);
+  transform-origin: left;
+  animation: orbit-progress 4s linear both;
+}
+.interest-orbit__pause {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 0;
+  background: transparent;
+  color: #a3b2ca;
+  border: 0;
+  cursor: pointer;
+  font: 9px/1.4 var(--font-mono, "IBM Plex Mono", monospace);
+}
+.interest-orbit__pause > svg {
+  height: 11px;
+  width: 11px;
+  stroke-width: 1.5;
+}
+.interest-orbit__pause:hover {
+  color: var(--orbit-lime);
+}
+.interest-orbit__pause:focus-visible {
+  outline: 1px solid var(--orbit-lime);
+  outline-offset: 5px;
+}
+.interest-orbit__pause:disabled {
+  cursor: default;
+  opacity: 0.8;
+}
+.interest-orbit[data-running="false"] .interest-orbit__scene *,
+.interest-orbit[data-running="false"] .interest-orbit__progress > span,
+.interest-orbit[data-running="false"] .interest-orbit__ring {
+  animation-play-state: paused;
+}
+.interest-orbit__scene--leaving * {
+  animation-play-state: paused;
+}
+
+/* Each scene is drawn for the circular stage, with its own physical motion. */
+
+@keyframes orbit-scene-enter {
+  from {
+    opacity: 0;
+    transform: translateY(9px) scale(0.96);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+@keyframes orbit-scene-leave {
+  to {
+    opacity: 0;
+    transform: translateY(-5px) scale(1.025);
+    filter: blur(3px);
+  }
+}
+@keyframes orbit-fine-ring {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes orbit-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .interest-orbit {
+    max-width: 470px;
+  }
+  .interest-orbit__heading {
+    padding-inline: 14px;
+    font-size: 9px;
+  }
+  .interest-orbit__node {
+    width: 68px;
+  }
+  .interest-orbit__node-icon {
+    height: 33px;
+    width: 33px;
+    box-shadow: 0 0 0 4px #111d30;
+  }
+  .interest-orbit__node-icon svg {
+    height: 15px;
+    width: 15px;
+  }
+  .interest-orbit__node-label {
+    font-size: 8px;
+  }
+  .interest-orbit__node[aria-pressed="true"] .interest-orbit__node-icon {
+    box-shadow:
+      0 0 0 4px #111d30,
+      0 0 0 5px rgb(223 240 138 / 20%);
+  }
+  .interest-orbit__transport {
+    margin-inline: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .interest-orbit *,
+  .interest-orbit *::before,
+  .interest-orbit *::after {
+    animation: none;
+    transition: none;
+  }
+  .interest-orbit__scene--leaving {
+    display: none;
+  }
+  .interest-orbit__progress {
+    display: none;
+  }
+}
