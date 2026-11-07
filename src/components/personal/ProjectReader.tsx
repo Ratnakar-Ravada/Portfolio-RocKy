@@ -124,9 +124,14 @@ export default function ProjectReader({
               <span aria-hidden="true" />
               {project.category === "personal"
                 ? "Personal build"
-                : "Professional work"}
+                : project.organization
+                  ? `${project.organization} / Professional work`
+                  : "Professional work"}
             </p>
             <h2 id="project-reader-title">{project.title}</h2>
+            {project.subtitle && (
+              <p className="project-reader__subtitle">{project.subtitle}</p>
+            )}
             <p className="project-reader__summary">{project.summary}</p>
             {(project.liveUrl || project.sourceUrl) && (
               <div className="project-reader__links">
@@ -153,6 +158,27 @@ export default function ProjectReader({
             )}
           </div>
 
+          {project.results && project.results.length > 0 && (
+            <section
+              className="project-reader__results"
+              aria-label={`${project.title} project results`}
+            >
+              <p className="project-reader__section-label">PROJECT RESULTS</p>
+              <dl className="project-reader__results-list">
+                {project.results.map((result) => (
+                  <div key={result.label}>
+                    <dt>{result.label}</dt>
+                    <dd>{result.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              {project.resultsNote && (
+                <p className="project-reader__results-note">
+                  {project.resultsNote}
+                </p>
+              )}
+            </section>
+          )}
           {imageCount > 0 && (
             <section
               className="project-reader__gallery"

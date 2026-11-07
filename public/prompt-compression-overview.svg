@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="compression-title compression-description">
+  <title id="compression-title">Intelligent Prompt Compression Playground</title>
+  <desc id="compression-description">Product overview of a React and FastAPI playground built in collaboration with R and D, integrating LLMLingua-2. Configurable compression ratios, force-kept tokens, and automatic prompt-complexity detection support comparisons of original and compressed prompts and responses. Custom diff viewers show changes alongside token and estimated cost savings. Results were 30 to 50 percent lower prompt-token consumption and 75 to 90 percent response accuracy in original-versus-compressed comparisons, depending on prompt complexity.</desc>
+  <defs>
+    <linearGradient id="compression-paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset="1" stop-color="#eaf0f9"/></linearGradient>
+    <pattern id="compression-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity=".045"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#compression-paper)"/>
+  <path d="M64 211H1536M64 861H1536" fill="none" stroke="#c5d3e7" stroke-width="2"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <path d="M64 58h40" stroke="#2356d9" stroke-width="4"/>
+    <text x="120" y="65" fill="#2356d9" font-size="20" font-weight="700" letter-spacing="2">INTELLIGENT PROMPT COMPRESSION PLAYGROUND</text>
+    <text x="1536" y="65" text-anchor="end" fill="#526178" font-size="18" letter-spacing="2">PRODUCT OVERVIEW</text>
+    <text x="64" y="135" fill="#14233a" font-size="52" font-weight="600" letter-spacing="-1.8">Less prompt. Keep the context that matters.</text>
+    <text x="64" y="178" fill="#526178" font-size="25">An R&amp;D collaboration that makes compression trade-offs visible and comparable.</text>
+
+    <rect x="64" y="250" width="402" height="570" fill="#14233a"/>
+    <rect x="64" y="250" width="402" height="570" fill="url(#compression-grid)"/>
+    <rect x="64" y="250" width="4" height="570" fill="#2356d9"/>
+    <text x="94" y="292" fill="#dff08a" font-size="19" font-weight="700" letter-spacing="2">THE QUESTION</text>
+    <text x="94" y="344" fill="#ffffff" font-size="33" font-weight="600" letter-spacing="-.7">How much prompt</text>
+    <text x="94" y="384" fill="#ffffff" font-size="33" font-weight="600" letter-spacing="-.7">can you remove?</text>
+    <path d="M94 418H436M94 547H436M94 676H436" stroke="#40516b" fill="none"/>
+    <path d="M94 450h18M94 579h18M94 708h18" stroke="#dff08a" stroke-width="3"/>
+    <text x="126" y="458" fill="#ffffff" font-size="25" font-weight="600">Keep useful context</text>
+    <text x="94" y="498" fill="#bacbe3" font-size="24">Preserve the information</text>
+    <text x="94" y="529" fill="#bacbe3" font-size="24">the response still needs.</text>
+    <text x="126" y="587" fill="#ffffff" font-size="25" font-weight="600">Compare the response</text>
+    <text x="94" y="627" fill="#bacbe3" font-size="24">Inspect changes alongside</text>
+    <text x="94" y="658" fill="#bacbe3" font-size="24">the original output.</text>
+    <text x="126" y="716" fill="#ffffff" font-size="25" font-weight="600">See the trade-offs</text>
+    <text x="94" y="756" fill="#bacbe3" font-size="24">Connect quality to token</text>
+    <text x="94" y="787" fill="#bacbe3" font-size="24">and estimated cost savings.</text>
+
+    <text x="506" y="276" fill="#2356d9" font-size="19" font-weight="700" letter-spacing="1.5">HOW THE PLAYGROUND WORKS</text>
+    <rect x="506" y="299" width="1030" height="109" fill="#ffffff" stroke="#c5d3e7"/>
+    <text x="534" y="336" fill="#2356d9" font-size="20" font-weight="700" letter-spacing="1.2">01 / BRING RESEARCH INTO A WORKING INTERFACE</text>
+    <text x="534" y="382" fill="#14233a" font-size="30" font-weight="600" letter-spacing="-.4">React + FastAPI playground, integrating LLMLingua-2</text>
+    <path d="M1021 409v25m-7-7 7 7 7-7" fill="none" stroke="#8aa5ce" stroke-width="2"/>
+
+    <rect x="506" y="446" width="1030" height="164" fill="#2356d9"/>
+    <text x="534" y="484" fill="#dff08a" font-size="20" font-weight="700" letter-spacing="1.2">02 / TAILOR THE COMPRESSION</text>
+    <path d="M859 509v76M1186 509v76" stroke="#81a0ee"/>
+    <g fill="#ffffff" font-size="27" font-weight="600">
+      <text x="534" y="541">Compression ratio</text><text x="885" y="541">Force-kept tokens</text><text x="1212" y="541">Prompt complexity</text>
+    </g>
+    <g fill="#eef4ff" font-size="24">
+      <text x="534" y="580">Configurable targets</text><text x="885" y="580">Keep essential context</text><text x="1212" y="580">Automatic detection</text>
+    </g>
+    <path d="M1021 611v25m-7-7 7 7 7-7" fill="none" stroke="#8aa5ce" stroke-width="2"/>
+
+    <rect x="506" y="648" width="1030" height="172" fill="#ffffff" stroke="#c5d3e7"/>
+    <text x="534" y="686" fill="#2356d9" font-size="20" font-weight="700" letter-spacing="1.2">03 / COMPARE ORIGINAL AND COMPRESSED</text>
+    <text x="534" y="731" fill="#14233a" font-size="30" font-weight="600" letter-spacing="-.4">Custom diffs + response comparisons</text>
+    <text x="534" y="773" fill="#526178" font-size="24">See what changed in the prompt and how the two responses compare.</text>
+    <text x="534" y="804" fill="#526178" font-size="24">Track token consumption and estimated cost savings together.</text>
+
+    <text x="64" y="916" fill="#2356d9" font-size="51" font-weight="600" letter-spacing="-1.5">30–50%</text>
+    <text x="292" y="914" fill="#14233a" font-size="25" font-weight="600">lower prompt-token consumption</text>
+    <text x="830" y="916" fill="#2356d9" font-size="51" font-weight="600" letter-spacing="-1.5">75–90%</text>
+    <text x="1058" y="914" fill="#14233a" font-size="25" font-weight="600">response accuracy in comparisons</text>
+    <text x="64" y="977" fill="#526178" font-size="22">Results in original-versus-compressed prompt comparisons, depending on prompt complexity.</text>
+  </g>
+</svg>

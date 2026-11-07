@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="governance-title governance-description">
+  <title id="governance-title">Enterprise LLM Evaluation and Governance</title>
+  <desc id="governance-description">Product overview of a shared evaluation and governance platform supporting Cigna's Enablement Office. Gateway-level DeepEval and GEval LLM-as-a-judge checks cover bias, toxicity, jailbreak, PII and PHI exposure, correctness, and hallucination. Drift monitoring and configurable team alerts help identify quality degradation, investigate risks, and govern AI consumption.</desc>
+  <defs>
+    <linearGradient id="governance-paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset="1" stop-color="#eaf0f9"/></linearGradient>
+    <pattern id="governance-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity=".045"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#governance-paper)"/>
+  <path d="M64 211H1536M64 881H1536" fill="none" stroke="#c5d3e7" stroke-width="2"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <path d="M64 58h40" stroke="#2356d9" stroke-width="4"/>
+    <text x="120" y="65" fill="#2356d9" font-size="20" font-weight="700" letter-spacing="2">ENTERPRISE LLM EVALUATION &amp; GOVERNANCE</text>
+    <text x="1536" y="65" text-anchor="end" fill="#526178" font-size="18" letter-spacing="2">PRODUCT OVERVIEW</text>
+    <text x="64" y="135" fill="#14233a" font-size="52" font-weight="600" letter-spacing="-1.8">Evaluate centrally. Monitor continuously.</text>
+    <text x="64" y="178" fill="#526178" font-size="25">Gateway-level checks and team signals, brought into one shared platform.</text>
+
+    <rect x="64" y="250" width="402" height="590" fill="#14233a"/>
+    <rect x="64" y="250" width="402" height="590" fill="url(#governance-grid)"/>
+    <rect x="64" y="250" width="4" height="590" fill="#2356d9"/>
+    <text x="94" y="292" fill="#dff08a" font-size="19" font-weight="700" letter-spacing="2">THE NEED</text>
+    <text x="94" y="344" fill="#ffffff" font-size="33" font-weight="600" letter-spacing="-.7">AI adoption needs</text>
+    <text x="94" y="384" fill="#ffffff" font-size="33" font-weight="600" letter-spacing="-.7">consistent controls.</text>
+    <path d="M94 418H436M94 553H436M94 688H436" stroke="#40516b" fill="none"/>
+    <path d="M94 450h18M94 585h18M94 720h18" stroke="#dff08a" stroke-width="3"/>
+    <text x="126" y="458" fill="#ffffff" font-size="25" font-weight="600">Quality &amp; safety</text>
+    <text x="94" y="498" fill="#bacbe3" font-size="24">Common checks for outputs</text>
+    <text x="94" y="529" fill="#bacbe3" font-size="24">and adversarial inputs.</text>
+    <text x="126" y="593" fill="#ffffff" font-size="25" font-weight="600">Changing behavior</text>
+    <text x="94" y="633" fill="#bacbe3" font-size="24">Identify quality degradation</text>
+    <text x="94" y="664" fill="#bacbe3" font-size="24">and emerging risk.</text>
+    <text x="126" y="728" fill="#ffffff" font-size="25" font-weight="600">Team visibility</text>
+    <text x="94" y="768" fill="#bacbe3" font-size="24">Surface concerns to the</text>
+    <text x="94" y="799" fill="#bacbe3" font-size="24">teams responsible.</text>
+
+    <text x="506" y="276" fill="#2356d9" font-size="19" font-weight="700" letter-spacing="1.5">HOW THE PLATFORM SUPPORTS TEAMS</text>
+    <rect x="506" y="299" width="1030" height="249" fill="#ffffff" stroke="#c5d3e7"/>
+    <text x="534" y="337" fill="#2356d9" font-size="20" font-weight="700" letter-spacing="1.2">01 / EVALUATE AT THE GATEWAY</text>
+    <text x="534" y="380" fill="#14233a" font-size="30" font-weight="600" letter-spacing="-.4">DeepEval / GEval · LLM-as-a-judge</text>
+    <path d="M534 405H1508" stroke="#d6dfec"/>
+    <g fill="#14233a" font-size="25">
+      <text x="558" y="449">Bias</text><text x="884" y="449">Toxicity</text><text x="1210" y="449">Jailbreak</text>
+      <text x="558" y="503">PII/PHI exposure</text><text x="884" y="503">Correctness</text><text x="1210" y="503">Hallucination</text>
+    </g>
+    <g fill="#2356d9"><rect x="534" y="435" width="6" height="6"/><rect x="860" y="435" width="6" height="6"/><rect x="1186" y="435" width="6" height="6"/><rect x="534" y="489" width="6" height="6"/><rect x="860" y="489" width="6" height="6"/><rect x="1186" y="489" width="6" height="6"/></g>
+    <path d="M1021 549v29m-7-7 7 7 7-7" fill="none" stroke="#8aa5ce" stroke-width="2"/>
+
+    <rect x="506" y="590" width="1030" height="122" fill="#2356d9"/>
+    <text x="534" y="625" fill="#dff08a" font-size="19" font-weight="700" letter-spacing="1.2">02 / MONITOR &amp; ALERT</text>
+    <text x="534" y="665" fill="#ffffff" font-size="29" font-weight="600" letter-spacing="-.3">Drift monitoring + configurable team alerts</text>
+    <text x="534" y="697" fill="#eef4ff" font-size="24">Detect degradation, investigate risks, and govern AI consumption.</text>
+    <path d="M1021 713v19m-7-7 7 7 7-7" fill="none" stroke="#8aa5ce" stroke-width="2"/>
+
+    <rect x="506" y="744" width="1030" height="96" fill="#ffffff" stroke="#c5d3e7"/>
+    <text x="534" y="781" fill="#14233a" font-size="29" font-weight="600" letter-spacing="-.4">A shared platform for Cigna's Enablement Office</text>
+    <text x="534" y="820" fill="#526178" font-size="24">Centralized evaluations and governance support broader AI adoption.</text>
+
+    <text x="64" y="924" fill="#2356d9" font-size="18" font-weight="700" letter-spacing="1.8">THE OUTCOME</text>
+    <text x="64" y="967" fill="#14233a" font-size="31" font-weight="600" letter-spacing="-.5">Consistent evaluation and monitoring across teams.</text>
+    <text x="1536" y="967" text-anchor="end" fill="#526178" font-size="18" letter-spacing="1.2">QUALITY / SAFETY / GOVERNANCE</text>
+  </g>
+</svg>

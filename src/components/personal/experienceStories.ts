@@ -12,12 +12,17 @@ export const experienceStories: Record<string, ExperienceStory> = {
     chapter: "The current chapter",
     companyLabel: "Evernorth",
     years: "2025 to now",
-    title: "From prompts to a working product.",
+    title: "Building AI products, and the systems around them.",
     paragraphs: [
-      "At Evernorth, I work on AI Prompt Library across the interface, APIs, AI features, and AWS delivery. The work reaches beyond writing prompts: it includes how people create, find, evaluate, share, and integrate them.",
-      "Expensia is another part of this chapter: a full expense-management application. I contributed across product, design, frontend, backend, AI, testing, and delivery, including RAG for supporting context and Image RAG for receipt comparison.",
+      "At Evernorth, I build products that bring AI into everyday work. Prompt Library connects prompt creation, discovery, collaboration, and secure integrations. Expensia brings agents, policy retrieval, receipt evidence, external verification, and human review into expense-claim processing.",
+      "I also contribute to the systems around those products: shared LLM evaluation and governance for Cigna’s Enablement Office, and an LLMLingua-2 compression playground developed with R&D. Together, these projects span application engineering, AI quality, experimentation, and cloud delivery.",
     ],
-    projectIds: ["ai-prompt-library", "expensia"],
+    projectIds: [
+      "ai-prompt-library",
+      "expensia",
+      "llm-evaluation-governance",
+      "prompt-compression-playground",
+    ],
   },
   pivony: {
     chapter: "Before that",

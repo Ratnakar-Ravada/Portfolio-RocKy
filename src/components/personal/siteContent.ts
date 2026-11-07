@@ -1,6 +1,10 @@
 export interface Project {
   id: string;
   title: string;
+  subtitle?: string;
+  organization?: string;
+  results?: { value: string; label: string }[];
+  resultsNote?: string;
   category: "personal" | "professional";
   summary: string;
   overview: string;
@@ -44,6 +48,9 @@ export interface ContactDetails {
   email: string;
   github: string;
   linkedin: string;
+  instagram: string;
+  playo: string;
+  letterboxd: string;
 }
 
 export interface ToolGroup {
@@ -138,109 +145,216 @@ export const contact: ContactDetails = {
   email: "ratnakarravada11@gmail.com",
   github: "https://github.com/Ratnakar-Ravada",
   linkedin: "https://www.linkedin.com/in/ratnakar-ravada/",
+  instagram: "https://www.instagram.com/ratnakar_rocky_11/",
+  playo: "https://playo.co/profile/a52db980-c3e9-49d0-9e53-4bfa0ac8d763",
+  letterboxd: "https://boxd.it/f8Tql",
 };
 
 export const projects: Project[] = [
   {
     id: "ai-prompt-library",
-    title: "AI Prompt Library",
+    title: "Prompt Library",
+    subtitle: "Enterprise Prompt Management Platform",
+    organization: "Evernorth",
     category: "professional",
     summary:
-      "A full stack home for creating, evaluating, discovering, and sharing AI prompts.",
+      "A secure workspace for creating, improving, discovering, and sharing prompts across users, teams, editors, and AI agents.",
     overview:
-      "An enterprise AI platform developed at Evernorth Health Services for reusable prompts and agent instructions. My contributions span product UX, React interfaces, FastAPI services, AI-assisted authoring, safety and evaluation, discovery, collaboration, integration APIs, analytics, and AWS delivery.",
+      "Built a full-stack enterprise platform at Evernorth for the complete prompt lifecycle: creation, editing, versioning, management, sharing, and collaboration. The platform connects secure user and team access with AI-assisted authoring, hybrid retrieval, quality and safety checks, analytics, and permission-aware integration tools.",
     implementation: [
-      "Built across a React and TypeScript frontend with Redux Toolkit, MUI, and SCSS, and a Python FastAPI backend using SQLAlchemy, PostgreSQL, pgvector, and Redis. The work connects the editing experience to data, AI services, access controls, and delivery workflows.",
-      "Developed prompt creation and editing, metadata and filters, favorites, version history and restoration, persistent drafts, and shareable links. Extended these workflows to Microsoft Copilot Agent Builder instructions with their connected apps, capabilities, and knowledge settings.",
-      "Implemented a multi-pass AI Prompt Builder with refinement instructions, protected text selections, undo, and follow-up suggestions. Model fallback handling, rate limits, and outcome tracking support the refinement experience.",
-      "Integrated layered prompt-injection checks using semantic and rule-based screening followed by LLM-as-a-judge evaluation. PII/PHI redaction runs before persistence, and DeepEval GEval quality checks evaluate clarity, completeness, output guidance, and reusability for each version.",
-      "Developed weighted lexical and pgvector semantic search, HyDE query expansion, duplicate detection, and search across authorized historical versions. Redis metadata fast paths support qualifying discovery requests.",
-      "Built personalized recommendations using prompt content, engagement, team activity, role, and department signals. Candidate refresh jobs and trending rankings support discovery while current access rules are applied when results are served.",
-      "Implemented team membership and roles, organization-aware user selection, bulk sharing, and exact-version prompt forks with source attribution. Ownership transfers retain an auditable journey through acceptance, rejection, pass-on actions, and review routing, with reminders and email notifications.",
-      "Developed spreadsheet uploads and bulk export, sharing, and deletion with SSE progress. Heartbeats, resumable streams, duplicate-review soft interrupts, and progress docks let longer workflows continue without blocking the editor.",
-      "Built personal and team API credentials, token issuance, rotation and revocation, authenticated prompt read/search APIs, and integration documentation. The API reuses current prompt access rules and records the calling user or team consistently.",
-      "Built live usage analytics and exports for engagement, users, teams, public API calls, discovery, cache efficiency, and AI acceptance. Token reporting separates in-app and Public API consumption by operation, model, and caller.",
-      "Worked on Docker builds, GitHub Actions workflows, AWS service configuration, scheduled jobs, Redis-backed analytics persistence, and verified S3 archival. Automated frontend and backend checks support ongoing changes.",
-      "Implemented MCP tool contracts and a local client adapter for prompt reads and standalone analysis through AgentCore Gateway, with Terraform and OIDC-based deployment automation. MCP integration development is part of the project scope.",
-      "Contributed product details around featured prompts, announcements, release notes, deep links, API access guidance, and alignment with the wider AI Hub experience.",
+      "Built the application with Python, FastAPI, React, TypeScript, and PostgreSQL/Aurora. Okta SSO, OAuth 2.0, and JWT secure authentication, while user- and team-level authorization controls access to prompts and collaboration.",
+      "Engineered Redis fast-path lookup and hybrid search combining weighted lexical matching, pgvector semantic similarity, and HyDE (Hypothetical Document Embeddings) for fast, relevant retrieval.",
+      "Developed AI Prompt Builder, intelligent tag and metadata suggestions, and prompt quality analysis with actionable improvement feedback.",
+      "Implemented DeepEval/GEval LLM-as-a-judge checks for prompt injection, jailbreak attempts, adversarial inputs, and toxic content.",
+      "Added sentence-level semantic duplicate detection across all prompt versions and PII/PHI redaction aligned with Cigna policies.",
+      "Optimized page and API latency through WebP assets, lazy loading, tree shaking, compressed builds, caching, fewer database calls, and background job processing. Iterative load and stress testing guided the performance work.",
+      "Delivered granular usage and LLM consumption analytics with detailed filters. Backend-enforced authorization restricts these analytics to advanced users.",
+      "Built SSE streaming with incremental progress and heartbeats for long-running workflows and bulk operations handling 500 items per request.",
+      "Deployed containerized services on AWS ECS with an Application Load Balancer, autoscaling, Aurora, and GitHub Actions CI/CD.",
+      "Exposed public APIs as MCP server tools behind AWS AgentCore Gateway. User and team identities and permissions carry through to authorized prompt retrieval from codebases, editors, and AI agents.",
     ],
     images: ["/prompt-library-flow.svg"],
     imageKind: "diagram",
+    imageLabel: "PRODUCT OVERVIEW",
     imageCaption:
-      "Workflow diagram of the platform: authoring, safety and quality checks, discovery, collaboration, API access, and analytics.",
+      "Prompt Library product overview: authoring and collaboration, secure access, hybrid retrieval, safety and quality checks, analytics, 500-item streamed bulk operations, cloud delivery, and authorized MCP tools.",
     tags: [
-      "React",
-      "TypeScript",
-      "Redux Toolkit",
-      "MUI",
       "Python",
       "FastAPI",
-      "SQLAlchemy",
-      "PostgreSQL",
+      "React",
+      "TypeScript",
+      "PostgreSQL / Aurora",
       "Redis",
       "pgvector",
-      "Claude",
-      "DeepEval",
-      "AWS",
-      "Docker",
+      "HyDE",
+      "DeepEval / GEval",
+      "Okta SSO",
+      "OAuth 2.0 / JWT",
+      "SSE",
+      "AWS ECS",
       "GitHub Actions",
       "MCP",
+      "AWS AgentCore Gateway",
     ],
     features: [
-      "Prompt and agent-instruction creation, editing, versioning, restoration, drafts, favorites, and sharing.",
-      "AI refinement with protected selections, iterative suggestions, undo, model fallback handling, and outcome tracking.",
-      "Layered injection checks, PII/PHI redaction, and per-version prompt quality evaluation.",
-      "Lexical and semantic search, HyDE query expansion, duplicate detection, and authorized all-version discovery.",
-      "Personalized recommendations, trending candidates, and Redis-backed discovery optimizations.",
-      "Teams, organization-aware user selection, bulk sharing, and exact-version forks with attribution.",
-      "Auditable ownership transfers with acceptance, rejection, pass-on, review routing, and notifications.",
-      "Spreadsheet import and bulk actions with resumable SSE progress, heartbeats, and duplicate review.",
-      "Personal/team credentials and authenticated integration APIs with current access checks.",
-      "Live analytics, exports, and token usage reporting across in-app and Public API activity.",
-      "Featured prompts, targeted announcements, in-app release notes, and deep-link experiences.",
-      "Container delivery, CI/CD workflows, scheduled processing, S3 archival, and MCP integration development.",
+      "Create, edit, version, manage, share, and collaborate on prompts with user- and team-level authorization.",
+      "Redis-assisted hybrid search with weighted lexical matching, pgvector semantic similarity, and HyDE.",
+      "AI Prompt Builder, intelligent metadata suggestions, and actionable prompt quality feedback.",
+      "DeepEval/GEval checks for injection, jailbreaks, adversarial inputs, and toxic content.",
+      "Sentence-level semantic duplicate detection across all versions and Cigna-aligned PII/PHI redaction.",
+      "Performance tuning informed by iterative load and stress testing.",
+      "Detailed usage and LLM consumption analytics with backend-enforced advanced-user access.",
+      "Bulk operations handling 500 items per request with SSE progress and heartbeats.",
+      "Container delivery through ECS, ALB, autoscaling, Aurora, and GitHub Actions CI/CD.",
+      "Permission-aware MCP tools behind AgentCore Gateway for prompt retrieval from editors, codebases, and AI agents.",
     ],
   },
   {
     id: "expensia",
     title: "Expensia",
+    subtitle: "Agentic Expense Claims Automation",
+    organization: "Evernorth",
     category: "professional",
     summary:
-      "An expense-management application using RAG and Image RAG to support claim validation and review.",
+      "Agent-led expense validation, fraud checks, and approval routing, grounded in policy context and receipt evidence.",
     overview:
-      "A full expense-management application developed at Evernorth Health Services, covering receipt intake, validation, approval, and human review. Expensia combines RAG for supporting context, Image RAG for receipt-similarity checks, and AI-assisted assessment. My contributions span product planning, UX and workflow design, frontend and backend engineering, AI integration, testing, and delivery.",
+      "Built Expensia end to end to automate expense-claim validation, fraud detection, and approval routing. This full application brings together AI agents, policy retrieval, receipt-image analysis, external verification, and contextual human review. My contributions span product, design, architecture, frontend, backend, AI integration, testing, and delivery.",
     implementation: [
-      "Expensia addresses manual reimbursement processing, delayed compliance and anomaly checks, and fragmented HRMS, ERP, and travel context. It brings claim information and supporting evidence into a connected review experience.",
-      "Contributed across product planning, UX and workflow design, application architecture, frontend and backend implementation, AI integration, testing, and delivery.",
-      "Connected receipt and document extraction, including OCR, with RAG-based context retrieval so claim assessments can use extracted information and supporting context together.",
-      "Image RAG adds receipt-similarity comparison to flag possible duplicate or fabricated claims, bringing visual evidence into the assessment alongside extracted receipt information.",
-      "Connected policy checks, cross-source validation, anomaly detection, claim value, and risk with explained decisions and tiered approval paths.",
-      "Discrepancies route to managers or administrators with the supporting evidence and reasons. Human reviewers can make contextual decisions and provide feedback.",
-      "Built an interactive review experience with stage status, decision traces, claim scenarios, feedback paths, and a navigable process view.",
+      "Implemented LangGraph supervisor-led multi-agent orchestration across receipt extraction, policy validation, anomaly detection, and claim decisions.",
+      "Developed RAG for policy retrieval and Image RAG for receipt-similarity analysis, giving agents grounded evidence and detailed fraud assessments.",
+      "Achieved 90% automated claims processing, with the remaining 10% routed through human-in-the-loop review with detailed reasoning and risk flags. Fraudulent-claim detection reached 94%.",
+      "Integrated third-party vendor APIs and public forums to corroborate claim details and strengthen fraud checks.",
+      "Built a RAG-powered policy and compliance chatbot that provides grounded guidance on claim submission, eligibility, and resolution.",
+      "Integrated LangSmith tracing for agent observability, automated risk flagging, and handling suspicious workflow executions.",
+      "Contributed across product, design, architecture, frontend, backend, AI integration, testing, and delivery.",
     ],
+    results: [
+      {
+        value: "90%",
+        label: "Automated claims processing",
+      },
+      {
+        value: "10%",
+        label: "Human-in-the-loop review",
+      },
+      {
+        value: "94%",
+        label: "Fraudulent-claim detection",
+      },
+    ],
+    resultsNote:
+      "Claims routed for human review include detailed reasoning and risk flags.",
     images: ["/expensia-flow.svg"],
     imageKind: "diagram",
     imageLabel: "PRODUCT OVERVIEW",
     imageCaption:
-      "Product overview: expense-review challenges, receipt extraction, RAG context retrieval, Image RAG receipt-similarity checks, policy and anomaly assessment, and contextual human review.",
+      "Expensia product overview: claim and receipt intake, RAG policy retrieval, Image RAG receipt-similarity analysis, external corroboration, risk-aware decisions, human review, a policy chatbot, and LangSmith tracing.",
     tags: [
+      "LangGraph",
       "RAG",
       "Image RAG",
-      "LangGraph",
+      "LangSmith",
+      "Multi-agent orchestration",
+      "Human-in-the-loop",
+      "Vendor APIs",
+      "Fraud detection",
       "React",
       "TypeScript",
-      "OCR",
-      "Multimodal AI",
-      "Human-in-the-loop",
     ],
     features: [
-      "Claim intake with receipt and document extraction, including OCR.",
-      "RAG-based retrieval of supporting context for claim assessment.",
-      "Image RAG receipt-similarity checks that flag possible duplicates or fabrication.",
-      "Policy checks, cross-source validation, anomaly detection, and explained assessments.",
-      "Tiered approvals and manager or administrator review based on claim value and risk.",
-      "Claim-stage visibility, decision traces, reviewer feedback, and interactive process navigation.",
-      "Contributions across product, design, architecture, frontend, backend, AI, testing, and delivery.",
+      "Supervisor-led receipt extraction, policy validation, anomaly detection, and claim decisions.",
+      "Policy retrieval with RAG and receipt-similarity assessment with Image RAG.",
+      "Claim corroboration through third-party vendor APIs and public forums.",
+      "Risk-aware approval routing with detailed reasoning and contextual human review.",
+      "A RAG-powered policy and compliance chatbot for submission, eligibility, and resolution guidance.",
+      "LangSmith traces, automated risk flags, and handling of suspicious workflow executions.",
+      "End-to-end contribution across product, design, frontend, backend, AI, testing, and delivery.",
+    ],
+  },
+  {
+    id: "llm-evaluation-governance",
+    title: "Enterprise LLM Evaluation and Governance",
+    organization: "Evernorth",
+    category: "professional",
+    summary:
+      "Shared gateway-level evaluations, drift monitoring, and team alerts for enterprise AI quality and governance.",
+    overview:
+      "Contributed to a shared platform that centralizes LLM evaluation and governance for Cigna’s Enablement Office. The work supports broader AI adoption through consistent monitoring, risk investigation, and controls over AI consumption.",
+    implementation: [
+      "Contributed to gateway-level LLM evaluation using DeepEval/GEval LLM-as-a-judge checks covering bias, toxicity, jailbreak, PII/PHI exposure, correctness, and hallucination.",
+      "Developed drift monitoring and configurable team alerts to identify quality degradation, support risk investigation, and govern AI consumption.",
+      "Supported Cigna’s Enablement Office by centralizing evaluation and governance into a shared platform, enabling broader AI adoption with consistent monitoring and controls.",
+    ],
+    images: ["/llm-governance-overview.svg"],
+    imageKind: "diagram",
+    imageLabel: "PRODUCT OVERVIEW",
+    imageCaption:
+      "Enterprise LLM evaluation and governance: shared gateway-level quality and safety checks, drift monitoring, configurable team alerts, risk investigation, and consistent controls for Cigna’s Enablement Office.",
+    tags: [
+      "DeepEval",
+      "GEval",
+      "LLM-as-a-judge",
+      "LLM Gateway",
+      "Drift monitoring",
+      "AI governance",
+      "Configurable alerts",
+      "PII / PHI controls",
+    ],
+    features: [
+      "Gateway-level LLM quality and risk evaluations using DeepEval/GEval.",
+      "Checks for bias, toxicity, jailbreak, PII/PHI exposure, correctness, and hallucination.",
+      "Drift monitoring and configurable team alerts for quality degradation and risk investigation.",
+      "Centralized evaluation and governance supporting Cigna’s Enablement Office.",
+      "Consistent monitoring and controls for broader enterprise AI adoption and consumption.",
+    ],
+  },
+  {
+    id: "prompt-compression-playground",
+    title: "Intelligent Prompt Compression Playground",
+    organization: "Evernorth",
+    category: "professional",
+    summary:
+      "A research-to-product playground for comparing prompt compression, responses, token consumption, and estimated costs.",
+    overview:
+      "Collaborated with R&D to turn prompt-compression research into a React/FastAPI playground integrating LLMLingua-2. The interface lets users tune compression and inspect how the compressed prompt affects model responses, token consumption, and estimated costs.",
+    implementation: [
+      "Collaborated with R&D to translate compression research into an interactive React/FastAPI playground integrating LLMLingua-2.",
+      "Implemented configurable compression ratios, force-kept tokens, and automatic prompt-complexity detection to tailor compression while preserving essential context.",
+      "Built custom diff viewers and original-versus-compressed response comparisons, alongside token and estimated cost savings metrics.",
+      "Achieved 30–50% lower prompt-token consumption with 75–90% response accuracy in original-versus-compressed prompt comparisons, depending on prompt complexity.",
+    ],
+    results: [
+      {
+        value: "30–50%",
+        label: "Lower prompt-token consumption",
+      },
+      {
+        value: "75–90%",
+        label: "Response accuracy",
+      },
+    ],
+    resultsNote:
+      "Results reflect original-versus-compressed prompt comparisons and depend on prompt complexity.",
+    images: ["/prompt-compression-overview.svg"],
+    imageKind: "diagram",
+    imageLabel: "PRODUCT OVERVIEW",
+    imageCaption:
+      "Prompt compression playground: LLMLingua-2 with configurable ratios, force-kept tokens, complexity detection, custom diffs, original-versus-compressed response comparisons, token consumption, and estimated cost savings.",
+    tags: [
+      "LLMLingua-2",
+      "React",
+      "FastAPI",
+      "Prompt compression",
+      "Diff viewers",
+      "Token metrics",
+      "Response comparison",
+    ],
+    features: [
+      "Configurable compression ratios and force-kept tokens.",
+      "Automatic prompt-complexity detection to preserve essential context.",
+      "Custom diff viewers and original-versus-compressed response comparisons.",
+      "Token consumption and estimated cost savings metrics.",
+      "30–50% lower prompt-token consumption with 75–90% response accuracy, depending on prompt complexity.",
     ],
   },
   {
@@ -443,84 +557,50 @@ export const workHistory: WorkExperience[] = [
     location: "",
     period: "May 2025 - Present",
     description:
-      "Working across full stack engineering, generative AI features, product experience, integration APIs, and AWS delivery. Key work includes AI Prompt Library and Expensia.",
+      "Building full-stack AI products, shared evaluation and governance capabilities, and research-driven tools at Evernorth Health Services. My work spans Prompt Library, Expensia, Enterprise LLM Evaluation and Governance, and the Intelligent Prompt Compression Playground.",
     contributions: [
       {
-        title: "AI Prompt Library: full stack product",
+        title: "Prompt Library | Enterprise Prompt Management Platform",
         details: [
-          "Developed React and TypeScript interfaces and FastAPI services for reusable prompts and agent instructions.",
-          "Built creation, editing, metadata, filtering, favorites, version history and restoration, persistent drafts, sharing, and connected product experiences.",
+          "Built the application with Python, FastAPI, React, TypeScript, and PostgreSQL/Aurora. Okta SSO, OAuth 2.0, and JWT secure authentication, while user- and team-level authorization controls access to prompts and collaboration.",
+          "Engineered Redis fast-path lookup and hybrid search combining weighted lexical matching, pgvector semantic similarity, and HyDE (Hypothetical Document Embeddings) for fast, relevant retrieval.",
+          "Developed AI Prompt Builder, intelligent tag and metadata suggestions, and prompt quality analysis with actionable improvement feedback.",
+          "Implemented DeepEval/GEval LLM-as-a-judge checks for prompt injection, jailbreak attempts, adversarial inputs, and toxic content.",
+          "Added sentence-level semantic duplicate detection across all prompt versions and PII/PHI redaction aligned with Cigna policies.",
+          "Optimized page and API latency through WebP assets, lazy loading, tree shaking, compressed builds, caching, fewer database calls, and background job processing. Iterative load and stress testing guided the performance work.",
+          "Delivered granular usage and LLM consumption analytics with detailed filters. Backend-enforced authorization restricts these analytics to advanced users.",
+          "Built SSE streaming with incremental progress and heartbeats for long-running workflows and bulk operations handling 500 items per request.",
+          "Deployed containerized services on AWS ECS with an Application Load Balancer, autoscaling, Aurora, and GitHub Actions CI/CD.",
+          "Exposed public APIs as MCP server tools behind AWS AgentCore Gateway. User and team identities and permissions carry through to authorized prompt retrieval from codebases, editors, and AI agents.",
         ],
       },
       {
-        title: "AI Prompt Builder",
+        title: "Expensia | Agentic Expense Claims Automation",
         details: [
-          "Implemented multi-pass AI refinement with temporary instructions, protected text selections, undo, and follow-up suggestions.",
-          "Connected model fallback handling, rate limits, and outcome tracking to the editor and save pipeline.",
+          "Implemented LangGraph supervisor-led multi-agent orchestration across receipt extraction, policy validation, anomaly detection, and claim decisions.",
+          "Developed RAG for policy retrieval and Image RAG for receipt-similarity analysis, giving agents grounded evidence and detailed fraud assessments.",
+          "Achieved 90% automated claims processing, with the remaining 10% routed through human-in-the-loop review with detailed reasoning and risk flags. Fraudulent-claim detection reached 94%.",
+          "Integrated third-party vendor APIs and public forums to corroborate claim details and strengthen fraud checks.",
+          "Built a RAG-powered policy and compliance chatbot that provides grounded guidance on claim submission, eligibility, and resolution.",
+          "Integrated LangSmith tracing for agent observability, automated risk flagging, and handling suspicious workflow executions.",
+          "Contributed across product, design, architecture, frontend, backend, AI integration, testing, and delivery.",
         ],
       },
       {
-        title: "Prompt safety and evaluation",
+        title: "Enterprise LLM Evaluation and Governance",
         details: [
-          "Combined semantic and rule-based injection screening with LLM-as-a-judge evaluation and escalation.",
-          "Integrated PII/PHI redaction, DeepEval GEval quality checks, per-version results, and standalone analysis APIs.",
+          "Contributed to gateway-level LLM evaluation using DeepEval/GEval LLM-as-a-judge checks covering bias, toxicity, jailbreak, PII/PHI exposure, correctness, and hallucination.",
+          "Developed drift monitoring and configurable team alerts to identify quality degradation, support risk investigation, and govern AI consumption.",
+          "Supported Cigna’s Enablement Office by centralizing evaluation and governance into a shared platform, enabling broader AI adoption with consistent monitoring and controls.",
         ],
       },
       {
-        title: "Search, discovery, and recommendations",
+        title: "Intelligent Prompt Compression Playground",
         details: [
-          "Developed lexical and pgvector semantic search, HyDE query expansion, duplicate detection, and authorized historical-version discovery.",
-          "Implemented Redis metadata fast paths and personalized recommendations using content, engagement, teams, role, and department signals.",
-        ],
-      },
-      {
-        title: "Teams and content governance",
-        details: [
-          "Built team roles, organization-aware user selection, bulk sharing, and exact-version prompt forks with source attribution.",
-          "Implemented auditable ownership-transfer journeys, review routing, accept/reject/pass-on actions, reminders, and notifications.",
-        ],
-      },
-      {
-        title: "Reliable editing and bulk workflows",
-        details: [
-          "Developed spreadsheet upload and bulk export, sharing, and deletion workflows with SSE progress.",
-          "Added heartbeats, stream resumption, duplicate-review soft interrupts, and progress docks for longer processing workflows.",
-        ],
-      },
-      {
-        title: "Public APIs and application security",
-        details: [
-          "Built personal/team credentials, token issuance, rotation, revocation, authenticated prompt reads/search, and integration documentation.",
-          "Implemented credential protection, JWT verification, live access checks, and rate limiting.",
-        ],
-      },
-      {
-        title: "Analytics and operational visibility",
-        details: [
-          "Built live dashboards and exports covering engagement, users, teams, Public API activity, discovery, cache efficiency, and AI acceptance.",
-          "Added model and token usage attribution by operation and caller, separating in-app and Public API reporting.",
-        ],
-      },
-      {
-        title: "Cloud delivery and lifecycle operations",
-        details: [
-          "Worked on Docker builds, GitHub Actions deployment workflows, AWS configuration, and scheduled processing jobs.",
-          "Implemented Redis-backed analytics persistence, verified S3 archival, and automated frontend/backend checks.",
-        ],
-      },
-      {
-        title: "MCP integration development",
-        details: [
-          "Implemented AgentCore Gateway tool contracts and a local MCP adapter for prompt reads and standalone analysis.",
-          "Developed Terraform and OIDC-based deployment automation while keeping existing prompt identity, access controls, and business logic in the API.",
-        ],
-      },
-      {
-        title: "Expensia: full application development",
-        details: [
-          "Contributed across product planning, UX and workflow design, architecture, frontend and backend engineering, AI integration, testing, and delivery for Expensia, a full expense-management application.",
-          "Integrated RAG for supporting context and Image RAG for receipt-similarity checks that flag possible duplicate or fabricated claims.",
-          "Connected receipt extraction and OCR, policy validation, cross-source and anomaly checks, explained decisions, and tiered manager or administrator review.",
+          "Collaborated with R&D to translate compression research into an interactive React/FastAPI playground integrating LLMLingua-2.",
+          "Implemented configurable compression ratios, force-kept tokens, and automatic prompt-complexity detection to tailor compression while preserving essential context.",
+          "Built custom diff viewers and original-versus-compressed response comparisons, alongside token and estimated cost savings metrics.",
+          "Achieved 30–50% lower prompt-token consumption with 75–90% response accuracy in original-versus-compressed prompt comparisons, depending on prompt complexity.",
         ],
       },
     ],
@@ -541,6 +621,19 @@ export const workHistory: WorkExperience[] = [
       "GitHub Actions",
       "Terraform",
       "MCP",
+      "Aurora",
+      "Okta SSO",
+      "OAuth 2.0",
+      "JWT",
+      "HyDE",
+      "GEval",
+      "LangGraph",
+      "RAG",
+      "Image RAG",
+      "LangSmith",
+      "LLMLingua-2",
+      "AWS ECS",
+      "AWS AgentCore Gateway",
     ],
     practices: [
       "Full stack product development",

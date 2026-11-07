@@ -19,20 +19,20 @@ npm run preview
 ## What is here
 
 - A clean two-column hero: Ravada Ratnakar, a short introduction and Hyderabad pin on the left, with eight matching portraits on the right in a slightly larger frame, with the RocKy banner over the image. The photo and RocKy subtitle change together every four seconds, with pause/resume and manual advance for reduced motion. The order is Software Engineer, Badminton Player, Movie geek, Foodie, Wanderer, Tech Enthusiast, Gamer, and Cook.
-- Eight documented projects, filterable by personal or professional work. The Evernorth entries include clearly labeled product maps. Expensia is documented as a full expense-management application, with a problem-and-solution overview highlighting RAG and Image RAG.
+- Ten documented projects, filterable by personal or professional work. Four Evernorth case studies lead the archive: Prompt Library, Expensia, Enterprise LLM Evaluation and Governance, and Intelligent Prompt Compression Playground. Each includes a product overview and complete implementation notes; Expensia and compression include the supplied results with their context.
 - Project reading views with original screenshots, accessible image galleries, implementation details, features, and existing public source/live links.
 - Who I Am follows the hero. Its rotating wheel sits on the left, with synchronized details for the selected interest on the right, followed by the project archive.
-- A work journal in three chapters: Evernorth, Pivony, and Circle Security. Each story connects to its projects, with the full original contributions in expandable engineering notes.
+- A work journal in three chapters: Evernorth, Pivony, and Circle Security. Each story connects to its projects, with detailed contributions in expandable engineering notes. The Evernorth chapter links to all four case studies.
 - A visible skills overview in three layers: AI systems, application engineering, and cloud delivery. All nine domains and their complete tool lists are readable without tabs, filters, or disclosures.
 - Three visible certification records for Anthropic, AWS, and Edureka, each with its provider verification link. The AWS entry opens its direct verification page.
 - IIIT Bhubaneswar education (July 2019 to July 2023) with a link to the supplied degree certificate.
 - Site search with `Ctrl+K` or `Cmd+K`; search by project, tool, or section.
-- Contact by email, GitHub, LinkedIn, or a note form.
+- Contact by email, GitHub, LinkedIn, Instagram, Playo, Letterboxd, or a note form.
 - Responsive navigation, native modal focus management, keyboard controls, and reduced-motion support.
 
 ## Update the content
 
-Edit `src/components/personal/siteContent.ts` for projects, work history, personal facts, contact links, and tools. Put screenshots in `public/` and reference their root-relative paths in the project data. New projects appear in the archive and search automatically. Each project supports `overview`, `implementation`, `features`, `tags`, `images`, optional `imageLabel` for the gallery heading, and optional `liveUrl` and `sourceUrl`.
+Edit `src/components/personal/siteContent.ts` for projects, work history, personal facts, contact links, and tools. Put screenshots in `public/` and reference their root-relative paths in the project data. New projects appear in the archive and search automatically. Each project supports `overview`, `implementation`, `features`, `tags`, `images`, optional `subtitle` and `organization`, optional `results` and `resultsNote`, an optional `imageLabel` for the gallery heading, and optional `liveUrl` and `sourceUrl`. Keep result conditions in `resultsNote`; the archive, filters, search, and reading view use the same project data.
 
 The page lives in `Workbench.tsx` and its colocated stylesheet. `PortfolioHero`, `HeroPortrait`, and `PortraitBanner`, `InterestOrbit` and `InterestScenes`, `SkillsSection`, `ExperienceSection`, `EducationSection`, and `PersonalSection` own the page sections; `ProjectReader` owns the project reading view. Existing source components and original assets remain in the repository for reference. Portrait filenames and subtitle order live in `portraitSlides.ts`; the next photo is preloaded and decoded before each transition. Skills domain anchors keep their `#skill-*` URLs. The narrative introductions live in `experienceStories.ts`; company, role, dates, and complete technical notes stay in `siteContent.ts`. Work history includes the supplied dates: Pivony through April 2025 and Evernorth from May 2025 to present.
 

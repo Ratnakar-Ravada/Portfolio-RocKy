@@ -716,19 +716,25 @@ button {
 }
 .contact-socials {
   display: flex;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 6px 25px;
   margin-top: 18px;
 }
 .contact-socials > a {
   font-size: 11px;
+  white-space: nowrap;
   display: flex;
   align-items: center;
   gap: 9px;
   min-height: 44px;
 }
 .contact-socials svg {
+  flex-shrink: 0;
   height: 15px;
   width: 15px;
+}
+.contact-socials .social-icon-letterboxd {
+  width: 24px;
 }
 .contact-socials > a > svg:last-child {
   height: 12px;
@@ -1103,7 +1109,7 @@ button {
     gap: 8px;
   }
   .contact-socials {
-    gap: 20px;
+    gap: 6px 20px;
   }
   .form-pair {
     gap: 16px;
@@ -1580,4 +1586,10 @@ body:has(.quick-find[open]) {
 }
 .missing-page > .button {
   margin-top: 20px;
+}
+
+.project-card > .project-card-subtitle {
+  margin: 10px 0 8px;
+  color: var(--accent);
+  font: 11px/1.7 var(--mono);
 }

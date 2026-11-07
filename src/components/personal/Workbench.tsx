@@ -5,6 +5,7 @@ import {
   Code2,
   Copy,
   Github,
+  Instagram,
   Linkedin,
   Mail,
   Menu,
@@ -20,6 +21,7 @@ import ExperienceSection from "./ExperienceSection";
 import EducationSection from "./EducationSection";
 import PersonalSection from "./PersonalSection";
 import ProjectReader from "./ProjectReader";
+import { LetterboxdIcon, PlayoIcon } from "./SocialIcons";
 import { contact, projects, type Project } from "./siteContent";
 import "./Workbench.css";
 import "./RevisionTheme.css";
@@ -118,18 +120,33 @@ function ContactPanel() {
         <span className="copy-feedback" role="status">
           {copied ? "Copied to clipboard." : "\u00a0"}
         </span>
-        <div className="contact-socials">
-          <a href={contact.github} target="_blank" rel="noreferrer">
-            <Github />
+        <nav className="contact-socials" aria-label="Connect with me">
+          <a href={contact.github} target="_blank" rel="noopener noreferrer">
+            <Github aria-hidden="true" />
             GitHub
-            <ArrowUpRight />
+            <ArrowUpRight aria-hidden="true" />
           </a>
-          <a href={contact.linkedin} target="_blank" rel="noreferrer">
-            <Linkedin />
+          <a href={contact.linkedin} target="_blank" rel="noopener noreferrer">
+            <Linkedin aria-hidden="true" />
             LinkedIn
-            <ArrowUpRight />
+            <ArrowUpRight aria-hidden="true" />
           </a>
-        </div>
+          <a href={contact.instagram} target="_blank" rel="noopener noreferrer">
+            <Instagram aria-hidden="true" />
+            Instagram
+            <ArrowUpRight aria-hidden="true" />
+          </a>
+          <a href={contact.playo} target="_blank" rel="noopener noreferrer">
+            <PlayoIcon />
+            Playo
+            <ArrowUpRight aria-hidden="true" />
+          </a>
+          <a href={contact.letterboxd} target="_blank" rel="noopener noreferrer">
+            <LetterboxdIcon />
+            Letterboxd
+            <ArrowUpRight aria-hidden="true" />
+          </a>
+        </nav>
       </div>
       <form className="contact-form" onSubmit={submitMessage}>
         <div className="form-heading">
@@ -232,7 +249,7 @@ function QuickFind({
       .includes(query.toLowerCase()),
   );
   const matchedProjects = projects.filter((project) =>
-    `${project.title} ${project.tags.join(" ")}`
+    `${project.title} ${project.subtitle ?? ""} ${project.tags.join(" ")}`
       .toLowerCase()
       .includes(query.toLowerCase()),
   );
@@ -367,6 +384,7 @@ function Workbench() {
     filter === "all"
       ? projects
       : projects.filter((project) => project.category === filter);
+  const featuredCount = filter === "personal" ? 2 : 4;
 
   useEffect(() => {
     function handleKeys(event: KeyboardEvent) {
@@ -549,7 +567,7 @@ function Workbench() {
             </span>
           </div>
           <div className="featured-projects">
-            {work.slice(0, 2).map((project) => (
+            {work.slice(0, featuredCount).map((project) => (
               <article
                 className={`project-card project-card-${project.id}`}
                 key={project.id}
@@ -588,7 +606,7 @@ function Workbench() {
                     {String(projects.indexOf(project) + 1).padStart(2, "0")} /{" "}
                     {project.category === "personal"
                       ? "PERSONAL BUILD"
-                      : "PROFESSIONAL WORK"}
+                      : project.organization || "PROFESSIONAL WORK"}
                   </span>
                   <span>{project.tags.slice(0, 3).join(" / ")}</span>
                 </div>
@@ -606,17 +624,20 @@ function Workbench() {
                     <ArrowUpRight />
                   </span>
                 </div>
+                {project.subtitle && (
+                  <p className="project-card-subtitle">{project.subtitle}</p>
+                )}
                 <p>{project.summary}</p>
               </article>
             ))}
           </div>
-          {work.length > 2 && (
+          {work.length > featuredCount && (
             <div className="project-index">
               <div className="project-index-heading eyebrow">
                 <span>MORE FROM THE ARCHIVE</span>
                 <span>OPEN TO EXPLORE ↗</span>
               </div>
-              {work.slice(2).map((project) => (
+              {work.slice(featuredCount).map((project) => (
                 <button
                   className="project-row"
                   key={project.id}
